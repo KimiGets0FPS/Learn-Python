@@ -1,19 +1,19 @@
 def new_words(letter_list, num_list):
     """
-    >>> new_words(["g", "e", "o"], [1, 0, 2])
+    >>> new_words(['g', 'e', 'o'], [1, 0, 2])
     'ego'
-    >>> new_words(["e", "t", "s", "t"], [3, 0, 2, 1])
+    >>> new_words(['e', 't', 's', 't'], [1, 0, 2, 3])
     'test'
+    >>> new_words(['b', 'e', 't', 'i', 'd', 'a'], [1, 4, 5, 0, 3, 2])
+    'edabit'
     """
-    original_num = 0
+    i = 0
     output = []
-    if len(letter_list) == len(num_list):
-        for _ in letter_list, num_list:
-            letter_list[original_num] = letter_list[num_list[original_num]]
-            original_num += 1
-            output.append(letter_list)
-        return output
-    return 'letter list does not equal to number list.'
+    for _ in letter_list:
+        temp = letter_list[num_list[i]]
+        i += 1
+        output.append(temp)
+    return ''.join(output)
 
 
 if __name__ == "__main__":
