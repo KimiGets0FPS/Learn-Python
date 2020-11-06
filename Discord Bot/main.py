@@ -5,7 +5,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import asyncio
 
-# import time
 import random as r
 import os
 
@@ -25,24 +24,18 @@ async def on_ready():
     print("Bot is ready to operate!")
 
 
-@client.command(name='help', help='Search for a command! Remember that the prefix is %\nCommand list --> '
+@client.command()
+async def error(message):
+    await message.channel.send(f'There is no such command {message.author.mention}!')
+"""@client.command(name='help', help='Search for a command! Remember that the prefix is %\nCommand list --> '
                                   '%kill and %search')
 async def stupid_people_needing_help(message):
-    pass
+    await message.channel.send(f'Still in progress {message.author.mention}!')"""
 
 
 @client.command(name='kill', help='Kills random amounts of people (Still in progress)')
 async def kill_things(message):
     kills = r.choice([0, 0, 0, 0, 1, 1, 2])
-    """choices_4_kill = ['Electrical', 'Admin', 'Lower Engine', 'Upper Engine', 'Oxygen Room', 'Cafeteria',
-                        'Navigation', 'Reactor', 'Medbay', 'Weapons', 'Shields', 'Storage']
-    place_1 = r.choice(choices_4_kill)
-    place_2 = r.choice(choices_4_kill)
-    place_3 = r.choice(choices_4_kill)
-    await message.channel.send(f'Where do you want to kill? (type in the word)\n1. {place_1}\n2. '
-                                f'{place_2}\n3. {place_3}')
-    time.sleep(10)
-    """
     if kills == 0:
         await message.channel.send(f'OOF! Nobody was there {message.author.mention} :(')
     else:
@@ -69,12 +62,30 @@ async def search(message):
             place_2 = r.choice(choices_4_kill)
         else:
             break
+        await message.channel.send(f'Where do you want to search?(type in the word)\n1. {place_1}\n2. {place_2}\n3. '
+                                   f'{place_3}')
 
-    @client.event(search)
+    @client.command()
     async def choose_place(place_choice):
-        await message.channel.send(f'Where do you want to search?(type in the word)\n1. {place_1}\n2. {place_2}\n'
-                                   f'3. {place_3}')
-    # time.sleep(10)
+
+        things_you_can_get = ['nothing', 'nothing', 'gun', 'missile', 'knife', 'ejected', 'sharp tongue',
+                              'coin']
+        random_thing = r.choice(things_you_can_get)
+        if random_thing == 'coin':
+
+            await place_choice.channel.send(f'{place_choice.author.mention} searched {place_choice} and got '
+                                            f'{r.randint(1, 30)}')
+        else:
+            await place_choice.channel.send(f'{place_choice.author.mention} searched {place_choice} and got '
+                                            f'{random_thing}')
+
+# time.sleep(10)
+
+
+@client.command(name='inv', help='Use this command to see what is inside your inventory! (Still in progress for '
+                                 'keep in track of things)')
+async def inventory(message):
+    await message.channel.send(f"Still in progress {message.author.mention}!")
 
 
 client.run(TOKEN)
