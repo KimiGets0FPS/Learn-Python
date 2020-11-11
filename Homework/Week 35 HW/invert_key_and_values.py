@@ -15,7 +15,6 @@ def key_and_values(input_dict):
     return input_dict
 
 
-
 class Test(unittest.TestCase):
     def test_if_correct(self):
         inverting = key_and_values({'a': 1, 'b': 2, 'c': 3})
