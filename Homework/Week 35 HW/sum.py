@@ -39,5 +39,5 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     import doctest
-    unittest.main()
     doctest.testmod(verbose=True)
+    unittest.main()
