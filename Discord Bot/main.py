@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-# from discord.ext.commands import Bot
+from discord.ext.commands import Bot
 
 from dotenv import load_dotenv
 import asyncio
@@ -10,7 +10,7 @@ import os
 
 
 load_dotenv('bot_token.env')
-TOKEN = os.getenv('BOT_TOKEN')
+TOKEN = os.getenv('BOT_TOKEN')  
 GUILD = os.getenv('BOT_GUILD')
 # print(f"{TOKEN}, {GUILD}")
 
@@ -24,14 +24,14 @@ def get_secondary_command(message):
 
 @client.event
 async def on_ready():
-    print("Bot is ready to operate!")
+    print(f"Token:{TOKEN}, GUILD:{GUILD}; Bot is ready to operate!")
 
 
 @client.command()
 async def error(message):
     await message.channel.send(f'There is no such command {message.author.mention}!')
 """@client.command(name='help', help='Search for a command! Remember that the prefix is %\nCommand list --> '
-                                  '%kill and %search')
+                                    '%kill and %search')
 async def stupid_people_needing_help(message):
     await message.channel.send(f'Still in progress {message.author.mention}!')"""
 
@@ -54,12 +54,12 @@ async def kill_things(message):
 async def search(message, place_to_search):
     place_to_search = place_to_search.title()
     things_you_can_get = ['knife', 'coins', 'massive Tongue', 'hair dyer', "crewmate's keycard", 'nothing', 'missile',
-                          'nothing', 'nothing', 'ejected', 'gun']
+                            'nothing', 'nothing', 'ejected', 'gun']
     choices_4_kill = ['Electrical', 'Admin', 'Lower Engine', 'Upper Engine', 'O2', 'Cafeteria', 'Navigation',
-                      'Reactor', 'Medbay', 'Weapons', 'Shields', 'Storage']
+                        'Reactor', 'Medbay', 'Weapons', 'Shields', 'Storage']
     if place_to_search not in choices_4_kill or place_to_search == None:
         await message.channel.send(f'What are you even thinking {message.author.mention}, that is not a aviable place to'
-                                   f' search/do your bussiness.')
+                                    f' search/do your bussiness.')
     else:
         wat_u_get = r.choice(things_you_can_get)
         wat_u_get_2 = r.choice(things_you_can_get)
@@ -73,33 +73,10 @@ async def search(message, place_to_search):
             await message.channel.send(f'{message.author.mention} got nothing!')
         else:
             await message.channel.send(f'{message.author.mention} got a {wat_u_get} and a {wat_u_get_2}!')
-    """await message.channel.send(f'Where do you want to search {message.author.mention}? \n the list of places you can'
-                               f' search is {choices_4_kill}')
-    place_1 = r.choice(choices_4_kill)
-    place_2 = r.choice(choices_4_kill)
-    place_3 = r.choice(choices_4_kill)
-    while True:
-        if place_1 == place_2:
-            place_1 = r.choice(choices_4_kill)
-        elif place_1 == place_3:
-            place_1 = r.choice(choices_4_kill)
-        elif place_2 == place_3:
-            place_2 = r.choice(choices_4_kill)
-        else:
-            break
-    @client.command()
-    async def choose_place(place_choice):
-        random_thing = r.choice(things_you_can_get)
-        if random_thing == 'coin':
-            await place_choice.channel.send(f'{place_choice.author.mention} searched {place_choice} and got '
-                                            f'{r.randint(1, 30)}')
-        else:
-            await place_choice.channel.send(f'{place_choice.author.mention} searched {place_choice} and got '
-                                            f'{random_thing}')"""
 
 
 @client.command(name='inv', help='Use this command to see what is inside your inventory! (Still in progress for storing'
-                                 ' your data')
+                                ' your data')
 async def inventory(message):
     await message.channel.send(f"Still in progress {message.author.mention}!")
 
