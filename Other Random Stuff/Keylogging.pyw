@@ -4,7 +4,7 @@ import logging
 
 log_dir = ""
 
-logging.basicConfig(filename=(log_dir + "Log.txt"), level=logging.DEBUG, format='%(asctime)s: %(message)s')
+logging.basicConfig(filename=(log_dir + "Log.txt"), level=logging.DEBUG, format='%(message)s')  # %(asctime)s: 
 
 
 def on_press(key):

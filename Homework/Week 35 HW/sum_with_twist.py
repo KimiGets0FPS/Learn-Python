@@ -3,6 +3,8 @@ import unittest
 
 def sum_of_two(num_1, num_2):
     """
+    >>> sum_of_two('555', '666')
+    '1221'
     >>> sum_of_two('5125515215521515', '125261616261626')
     '5250776831783141'
     >>> sum_of_two('6666666666666666666666666666', '99999999999999999999999')
@@ -11,7 +13,7 @@ def sum_of_two(num_1, num_2):
     '987654445444443445444443453333332'
     """
     #* Seperating everything
-    list_1 = list(num_1)
+    list_1 = list(num_1)     
     list_2 = list(num_2)
     #* Making sure that everything is the same, so there aren't going to be any errors in the future.
     if len(list_1) != len(list_2):
@@ -21,16 +23,14 @@ def sum_of_two(num_1, num_2):
         else:
             while len(list_1) != len(list_2):
                 list_1.insert(0, '0')
-    #* Making everything an integer for list_1
+    list_1.insert(0, '0')
+    list_2.insert(0, '0')
+    #* Making everything an integer for list_1 and list_2
     i = 0
     for _ in list_1:
         list_1[i] = int(list_1[i])
-        i+=1
-    #* Making everything an integer for list_2
-    i = 0
-    for _ in list_2:
         list_2[i] = int(list_2[i])
-        i+=1
+        i += 1
     #* Calcualtion starts here
     i = -1
     for _ in list_1:
@@ -40,7 +40,11 @@ def sum_of_two(num_1, num_2):
             list_1[i] -= 10
         list_1[i] = str(list_1[i])
         i -= 1
-        #* Returning the final answer
+    if list_1[0] == '0':
+        list_1.pop(0)
+    if list_2[0] == '-':
+        list_2.pop(0)
+    #* Returning the final answer
     return ''.join(list_1)
 
 
