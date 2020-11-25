@@ -21,7 +21,6 @@ class Test(unittest.TestCase):
     def test_2(self):
         test_2_var = next_letter('hello')
         self.assertEqual(test_2_var, 'ifmmp')
-        
 
 if __name__ == "__main__":
     unittest.main()

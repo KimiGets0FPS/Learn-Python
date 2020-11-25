@@ -98,7 +98,7 @@ def main():
     else:
         drawing_6()
 
-#main()
+# main()
 while True:
     for event in pygame.event.get():
         if event.type == QUIT:

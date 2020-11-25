@@ -1,10 +1,7 @@
-import doctest
+import unittest
 
 
 class Calculator:
-    """
-    EXAMPLES TO TEST WITH DOCTEST!!!!!
-    """
     def __init__(self):
         pass
 
@@ -21,6 +18,10 @@ class Calculator:
         pass
 
 
-"""If All tests pass, then it is ready for using!!!"""
+class Tests(unittest.TestCase):
+    def test_1(self):
+        pass
+
+
 if __name__ == "__main__":
-    doctest.testmod(verbose=True)
+    unittest.main()
