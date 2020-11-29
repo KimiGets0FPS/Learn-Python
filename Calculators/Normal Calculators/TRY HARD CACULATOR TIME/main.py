@@ -34,8 +34,6 @@ class C:
         return cn
 
 
-
-
 class Tests(unittest.TestCase):
     def test_1(self):
         c1v = C(1, 2, 3)
