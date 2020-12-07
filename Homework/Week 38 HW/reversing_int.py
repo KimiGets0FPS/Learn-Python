@@ -14,9 +14,17 @@ def reverse_int(num):
     return sum(output)
 
 
+def way_two(n):
+    return int(str(n)[::-1])
+
+
 class Test(unittest.TestCase):
     def test_1(self):
         test_1_v = reverse_int(123)
+        self.assertEqual(test_1_v, 321)
+
+    def test_2(self):
+        test_1_v = way_two(123)
         self.assertEqual(test_1_v, 321)
 
 
