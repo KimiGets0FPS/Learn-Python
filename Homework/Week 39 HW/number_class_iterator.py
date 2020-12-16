@@ -2,18 +2,15 @@ class NumberIterator:
     def __init__(self, start_num, end_num):
         self.start_num = int(start_num)
         self.end_num = int(end_num)
-        self.current_num = self.start_num
 
     def __iter__(self):
         self.current_num = self.start_num
-        self.next = self.start_num
         return self
 
     def __next__(self):
-        self.current_num = self.next
         if self.current_num > self.end_num:
             self.current_num = self.start_num
-        self.next += 1
+        self.current_num += 1
         return self.current_num
 
 
