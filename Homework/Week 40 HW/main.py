@@ -1,55 +1,37 @@
+from user_settings import User
+from book import Book
+
+
 class Main:
-    def __init__(self, names, books, lent_books=[], owe=0):
-        self.names = names
-        self.books = books
-        self.lent_books = lent_books
-        self.owe = owe
-
-    def get_user(self, name, password):
-        if name.title() in self.names:
-            if int(password) == self.names.get(name.title()):
-                return f'Hello {name.title()}!'
-            return 'Wrong password'
-        return 'Sorry, not a valid user'
-
-    def get_book(self, getbook):
-        if getbook.title() in self.books:
-            return getbook.title()
-        return 'Not a valid book'
-
-    def delete_book(self, book, output=[]):
-        if book.title() in self.books:
-            del self.books[book.title()]
-            for i in self.books:
-                output.append(i)
-            if len(output) > 10:
-                output = output[:10]
-            return f"Books that are available: {', '.join(output)}"
-        return 'Not a valid book'
-    
-    def book_price(self, book):
-        if book.title() in self.books:
-            return self.books[book.title()]
-        return 'Not a valid book'
-
-    def lend_book(self):
-        pass
-
-    def return_book(self):
-        pass
-
-    def owe_money(self):
-        pass
+    pass
 
 
 if __name__ == '__main__':
-    main = Main({'Brian': 1234, 'Kimi': 5678, 'Ryan': 9012}, {'Harry Potter 1': 13, 'Harry Potter 2': 14, 'Harry Potter 3': 15}, [''])
+    main = User({'Brian': 1234, 'Kimi': 5678, 'Ryan': 9012}, 13)
+    #! input name and check password
     gname = input('Your name: ')
     gpassword = input('Your Password: ')
-    print(main.get_user(gname, gpassword))
-    dbook = input('Book that you want to delete: ')
-    print(main.delete_book(dbook))
+    print(main.signin(gname, gpassword))
+    #! owe money
+    omoney = input('Do you want to see if you owe any money (yes/no): ')
+    print(main.owe_money(omoney))
+#*----------------------------------------------------------------------------------------------------------------------------------------*#
+    booksetting = Book({'Harry Potter 1': 13, 'Harry Potter 2': 14, 'Harry Potter 3': 15},  ['Harry Potter 3'])
+    print(booksetting.available_books)
+    #! a book you want to get
     gbook = input('Book that you want to get: ')
-    print(main.get_book(gbook))
+    print(booksetting.get_book(gbook))
+    #! deleting a book
+    dbook = input('Book that you want to delete: ')
+    print(booksetting.delete_book(dbook))
+    #! how much the book is worth
     pbook = input('Book you want to see how much it costs: ')
-    print(main.book_price(pbook))
+    print(booksetting.book_price(pbook))
+    #! borrowing a book
+    bbook = input('What book do you want to borrow: ')
+    print(booksetting.lend_book(bbook))
+    #! returning a book
+    rbook = input('What book do you want to return: ')
+    print(booksetting.return_book(rbook))
+    #! looking at avialable books
+    # abook = input('Do you want to see what are the current available books (Yes/No): ')
