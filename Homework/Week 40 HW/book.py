@@ -1,25 +1,40 @@
 class Book:
-    def __init__(self, books, lend_books=[], occupied_books=[]):
+    def __init__(self, books, availiable_books=[], lend_books=[], occupied_books=[]):
+        # books: the books in a library
         self.books = books
+        # books that are available
+        self.availiable_books = availiable_books
+        # lend_books: the books that the user lended
         self.lend_books = lend_books
+        # occupied_books: the unavailable books that other users borrwoed.
         self.occupied_books = occupied_books
 
     @property
     def available_books(self):
         temp = []
-        for i in self.books:
+        for i in self.availiable_books:
                 temp.append(i)
         if len(self.books) > 10:
             return f"Current available books: {', '.join(temp[:10])}..."
         return f"Current available books: {', '.join(temp)}"
 
-    def get_book(self, getbook):
-        if getbook.title() in self.books and getbook.title() not in self.occupied_books:
-            return getbook.title()
-        elif getbook.title() in self.occupied_books:
-            return f"{getbook.title()} is being borrowed at the moment, please try again later."
-        return 'Not a valid book'
+    #* See the specific details about a specific book
+    def check_book(self, book):
+        if book.title() in self.books:
+            book_price = self.books[book.title()]
+            if book.title() not in self.occupied_books:
+                return f"{book.title()}, by {book_price[0]}, is avaliable."
+            return f"{book.title()}, by {book_price[0]}, is not avaliable."
+        return f"We don't have {book.title()} in this library."
 
+    #! REQUIRES STAFF ACCESS
+    def add_book(self, book, book_price):
+        if book.title() in self.books:
+            return f'The book {book.title()} is already in the library.'
+        self.books[book.title()] = book_price
+        return 'Book added.'
+
+    #! REQUIRES STAFF ACCESS
     def delete_book(self, book, output=[]):
         if book.title() in self.books:
             del self.books[book.title()]
@@ -37,13 +52,23 @@ class Book:
 
     def lend_book(self, book):
         if book.title() not in self.occupied_books:
-            self.occupied_books.append(book.title())
+            self.lend_books.append(book.title())
+            self.availiable_books.remove(book.title())
             return 'Book is available and you borrowed it'
         return 'The book is not avialable'
 
     def return_book(self, book):
         if book.title() in self.lend_books:
-            self.lend_books.pop([book.title()])
+            self.lend_books.remove([book.title()])
+            self.availiable_books.append(book.title())
         return f"{book.title()} isn't in your lend books list."
 
-
+    # TODO: COMPLETE MODIFY BOOK FUNCTION
+    def modify(self, book, price='', author=''):
+        if book.title() in self.books:
+            if price:
+                ...
+            if author:
+                ...
+            return f"{book.title()} has been succesfully modified."
+        return "Not a valid book"

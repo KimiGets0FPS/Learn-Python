@@ -1,21 +1,26 @@
-# import sys
-# print(sys.executable)
 class User:
-    def __init__(self, names, owe=0):
-        self.names = names
-        self.owe = owe
+    def __init__(self, users, staff):
+        #* users
+        self.users = users
+        #* staff
+        self.staff = staff
 
     def signin(self, name, password):
-        if name.title() and password:
-            if name.title() in self.names:
-                if int(password) == self.names.get(name.title()):
-                    return f'Welcom {name.title()}!'
-                return 'Wrong password'
-            return 'Invalid user'
+        if name.title() in self.staff:
+            spassword = self.staff[name.title()]
+            if password == spassword[0]:
+                return 'Staff'
+        else:
+            upassword = self.users[name.title()]
+            if password == upassword[0]:
+                return True
+            return False
 
-    def owe_money(self, desicion):
-        if desicion.title() == 'No':
-            return None
-        if self.owe == 0:
-            return "You don't owe any money!"
-        return f'You owe {self.owe} dollars!'
+    def owe_money(self, name):
+        if name.title() in self.staff:
+            value_list = self.staff[name.title()]
+        else:
+            value_list = self.users[name.title()]
+        if value_list[1] == None:
+            return "You don't owe any money"
+        return f"You owe {value_list[1]} dollars"
