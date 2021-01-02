@@ -12,8 +12,8 @@ class Book:
         if book.title() in self.books:
             book_info = self.books[book.title()]
             if book.title() not in self.lend_books:
-                return f"{book.title()} (costing {book_info[1]}), by {book_info[0]}, is avaliable."
-            return f"{book.title()} (costing {book_info[1]}), by {book_info[0]}, is not avaliable."
+                return f"{book.title()} (costing {book_info[1]} dollars), by {book_info[0]}, is avaliable."
+            return f"{book.title()} (costing {book_info[1]} dollars), by {book_info[0]}, is not avaliable."
         return f"We don't have {book.title()} in this library."
 
     #! REQUIRES STAFF ACCESS

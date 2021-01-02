@@ -1,0 +1,3 @@
+Kimi, 5678, 20, staff
+Ryan, 9012, 11
+Brian, 1234, 12

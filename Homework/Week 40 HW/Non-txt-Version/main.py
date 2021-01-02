@@ -3,7 +3,7 @@ from book import Book
 
 
 # TODO: add modify book function
-user = User({'Brian': ['1234', '13'], 'Ryan': ['9012', '13']}, {'Kimi': ['5678', '14']})
+user = User({'Brian': ['1234', '0'], 'Ryan': ['9012', '0']}, {'Kimi': ['5678', '0']})
 #! adding more details to books
 booksetting = Book({'Harry Potter 1': ['J.K. Rowling', '13'], 
     'Harry Potter 2': ['J.K. Rowling', '14']}, 
@@ -18,7 +18,7 @@ class Main:
         if user.signin(get_name, get_passw) == True or 'Staff':
             while True:
                 print('------------------------------------------')
-                userinpt = input(""
+                userinpt = input(
                     "1.) Borrow Books\n"
                     "2.) Return Books\n"
                     "3.) See Current Available books\n"
@@ -41,7 +41,6 @@ class Main:
                 #! 3
                 elif userinpt == '3':
                     print(booksetting.see_available_books)
-                
                 #! 4
                 elif userinpt == '4':
                     print(booksetting.borrowed_book)
@@ -54,7 +53,7 @@ class Main:
                     print(user.owe_money(get_name.title()))
                 #! 7, 8, and 9
                 elif userinpt == '7' or userinpt == '8' or userinpt == '9':
-                    # all requires admin access so it's better to make it together
+                    #* all requires admin access so it's better to make it together
                     if user.signin(get_name, get_passw) != 'Staff':
                         get_staff = input(f'What is your username: ')
                         get_pass = input(f'What is your password: ')
@@ -72,6 +71,7 @@ class Main:
                             gprice = input('Enter the new price for the book: ')
                             guathor = input('Enter the new author for the book: ')
                             print(booksetting.modify(bbook, gprice, guathor))
+
                 #! 10
                 elif userinpt == '10':
                     break
