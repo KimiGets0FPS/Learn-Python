@@ -15,12 +15,3 @@ class User:
             if password == upassword[0]:
                 return True
             return False
-
-    def owe_money(self, name):
-        if name.title() in self.staff:
-            value_list = self.staff[name.title()]
-        else:
-            value_list = self.users[name.title()]
-        if value_list[1] == None:
-            return "You don't owe any money"
-        return f"You owe {value_list[1]} dollars"

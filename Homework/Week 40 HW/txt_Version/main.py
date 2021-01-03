@@ -38,11 +38,11 @@ def menu():
 
             #! Option 3
             elif user_input == '3':
-                ...
+                print(book.current_available_books)
 
             #! Option 4
             elif user_input == '4':
-                ...
+                print(book.current_return_books)
 
             #! Option 5
             elif user_input == '5':
@@ -68,7 +68,7 @@ def menu():
             else:
                 print("There is no such option.")
     else:
-        return 0
+        return 'Login failed.'
 
 
 menu()

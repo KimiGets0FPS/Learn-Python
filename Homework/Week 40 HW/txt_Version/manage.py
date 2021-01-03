@@ -5,8 +5,9 @@ class Manage:
     def borrow_book(self, book):
         for line in file.readlines():
             if book.title() == line:
-                edit_f = open("C:/Users/zhewe/Coding Projects/Learn-Python/Homework/Week 40 HW/txt_version/borrowed.txt", "w")
-                return book.title()
+                edit_file = open("C:/Users/zhewe/Coding Projects/Learn-Python/Homework/Week 40 HW/txt_version/borrowed.txt", "w")
+                
+                return 'Book borrowed'
         return 'There is no such book'
 
     def return_book(self, book):

@@ -6,7 +6,7 @@ class Users:
         for line in file.readlines():
             line = line.split(', ')
             if username == line[0] and password == line[1]:
-                if line[3]:
+                if line[3] == 'staff':
                     return 'Staff'
                 return 'True'
         return 'False'

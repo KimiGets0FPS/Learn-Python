@@ -21,8 +21,8 @@ class Book:
         if book.title() in self.books:
             return f'The book {book.title()} is already in the library.'
         self.available_books.append(book.title())
-        self.books[book.title()] = book_price
-        self.books[book.title()] = book_author
+        self.books[book.title()] = []
+        self.books[book.title()].extend((book_author.title(), book_price))
         return 'Book added.'
 
     #! REQUIRES STAFF ACCESS
@@ -38,11 +38,23 @@ class Book:
             return 'Book deleted'
         return 'Not a valid book'
 
+    #! REQUIRES STAFF ACCESS
+    def modify(self, book, new_price='', new_author=''):
+        if book.title() in self.books:
+            if new_price:
+                self.books[book.title()][1] = new_price
+            if new_author:
+                self.books[book.title()][0] = new_author
+            return f"{book.title()} has been succesfully modified."
+        return "Not a valid book"
+
     def borrow_book(self, book):
         if book.title() in self.available_books:
             self.lend_books.append(book.title())
             self.available_books.remove(book.title())
             return 'Book is available and you borrowed it'
+        if book.title() not in self.books:
+            return 'Not a valid book'
         return 'The book is not avialable'
 
     def return_book(self, book):
@@ -58,23 +70,13 @@ class Book:
         if bool(self.available_books) == False:
             return "There aren't any books available."
         if len(self.available_books) > 10:
-            return f"Current available books: {', '.join(self.available_books[:10])}..."
-        return f"Current available books: {', '.join(self.available_books)}"
+            return f"{', '.join(self.available_books[:15])}..."
+        return ', '.join(self.available_books)
 
     @property
     def borrowed_book(self):
         if bool(self.lend_books) == False:
             return "You don't need to return any books."
         if len(self.lend_books) > 10:
-            return f"{', '.join(self.lend_books[:10])}..."
+            return f"{', '.join(self.lend_books[:15])}..."
         return ', '.join(self.lend_books)
-
-    # TODO: COMPLETE MODIFY BOOK FUNCTION
-    def modify(self, book, new_price='', new_author=''):
-        if book.title() in self.books:
-            if new_price:
-                self.books[book.title()][1] = new_price
-            if new_author:
-                self.books[book.title()][0] = new_author
-            return f"{book.title()} has been succesfully modified."
-        return "Not a valid book"
