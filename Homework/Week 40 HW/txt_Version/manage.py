@@ -22,9 +22,12 @@ class Manage:
         return "Need full information!"
 
     def delete_book(self, book, confirm='Yes'):
-        if confirm.title() == 'Yes':
-            ...
-        return 'Delete book cancelled.'
+        if book.title() in boos:
+            if confirm.title() == 'Yes':
+                if book.title() in borrowed:
+                    ...
+            return "Delete book cancelled."
+        return "There is no such book."
 
     def modify_book(self, book, title='', price=0, author=''):
         if book in borrowed:
