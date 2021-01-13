@@ -6,7 +6,16 @@ class Users:
         for line in file.readlines():
             line = line.split(', ')
             if username == line[0] and password == line[1]:
-                if line[3] == 'staff':
-                    return 'Staff'
-                return 'True'
-        return 'False'
+                return True
+        return False
+
+    def ifstsaff(self, username, password):
+        if username not in file.readlines():
+            return "There is no such user."
+        for line in file.readlines():
+            line = line.split(', ')
+            if username == line[0] and password == line[1]:
+                if line[3]:
+                    return True
+                break
+        return False

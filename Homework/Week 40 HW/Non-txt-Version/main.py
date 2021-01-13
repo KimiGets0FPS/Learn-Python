@@ -4,9 +4,9 @@ from book import Book
 
 user = User({'Brian': ['1234'], 'Ryan': ['2354']}, {'Kimi': ['3456']})
 
-booksetting = Book({'Harry Potter 1': ['J.K. Rowling', '13'], 
-    'Harry Potter 2': ['J.K. Rowling', '14']}, 
-    ['Harry Potter 1'], ['Harry Potter 2'])
+booksetting = Book({'Harry Potter 1': ['J.K. Rowling', '13'],
+                    'Harry Potter 2': ['J.K. Rowling', '14']},
+                   ['Harry Potter 1'], ['Harry Potter 2'])
 
 
 def library_main():

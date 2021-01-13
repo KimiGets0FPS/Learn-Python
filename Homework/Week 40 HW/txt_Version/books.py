@@ -4,7 +4,12 @@ books = open("C:/Users/zhewe/Coding Projects/Learn-Python/Homework/Week 40 HW/tx
 
 class Book:
     def specific_book_available(self, book):
-        ...
+        if book in books:
+            if book in borrowed_books:
+                return "This book isn't available."
+            return "This book is available and you can borrow it."
+        return "There is no such book."
+
 
     @property
     def current_available_books(self):
@@ -13,15 +18,20 @@ class Book:
             bname = book.split(', ')
             if bname not in borrowed_books:
                 available_books.append(bname)
-        if available_books == []:
+        if not available_books:
             return "There aren't any availlable books."
         if len(available_books) > 10:
             return f"{', '.join(available_books)[:10]}"
         return f"{', '.join(available_books)}"
     
     @property
-    def current_return_books(self):
-        ...
+    def current_return_books(self, output):
+        for book in books.readlines():
+            if book not in borrowed_books:
+                output.append(book)
+        if len(output) > 10:
+            return f"{', '.join(output)[:10]}..."
+        return f"{', '.join(output)}"
 
     def book_details(self, book):
         for line in books.readlines():
