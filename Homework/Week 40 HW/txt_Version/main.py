@@ -54,7 +54,7 @@ def menu():
                 getbook = input("Book title: ")
                 getprice = input("Book price: ")
                 getauthor = input("Book author: ")
-
+                manage.add_book(getbook, getprice, getauthor)
 
             # Option 7, Delete Book
             elif user_input == '7':
