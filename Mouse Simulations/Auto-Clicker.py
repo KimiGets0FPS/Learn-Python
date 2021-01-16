@@ -3,8 +3,8 @@ import threading
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
 
-delay = 0.001
-button = Button.left
+delay_o = 0.001
+left_button = Button.left
 start_stop_key = KeyCode(char='`')
 exit_key = KeyCode(char='~')
 
@@ -36,7 +36,7 @@ class ClickMouse(threading.Thread):
 
 
 mouse = Controller()
-click_thread = ClickMouse(delay, button)
+click_thread = ClickMouse(delay_o, left_button)
 click_thread.start()
 
 
