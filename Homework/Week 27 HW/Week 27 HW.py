@@ -16,5 +16,5 @@ def hello(num_list, num):
     return index_nums
 
 
-numbers = [1, 3, 5, 3, 8, 9, 3]  # Edit the list of numbers
+numbers = [1, 3, 5, 3, 8, 9, 3]  # Edit the my_list of numbers
 print(hello(numbers, 9))  # Edit the second number two

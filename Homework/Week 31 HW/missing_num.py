@@ -38,7 +38,7 @@ def another_way(nums):
 
 def another_one(list_num):  # works in most cases though :\
     """
-    >>> another_way([5, 3, 1, 0, 4])  # ordered list is 0, 1, 3, 4, 5
+    >>> another_way([5, 3, 1, 0, 4])  # ordered my_list is 0, 1, 3, 4, 5
     2
     >>> another_way([1,0,2])
     3

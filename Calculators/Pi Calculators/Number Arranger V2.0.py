@@ -17,8 +17,8 @@ def play():
         if user_input == 0:
             max_value = maximum(list)
             min_value = minimum(list)
-            print ("The biggest number in the list is ", max_value)
-            print ("The smallest number in the list is ", min_value)
+            print ("The biggest number in the my_list is ", max_value)
+            print ("The smallest number in the my_list is ", min_value)
             break
         else:
             list.append(user_input)

@@ -30,9 +30,9 @@ def do():
     while True:
         user_input = int(input("Choose a number(Enter 0 to stop): "))
         if user_input == 0:
-            print ("The sum in the list is ",sum(list))
-            print ("The product in the list is ",product(list))
-            print ("The median of the list is ",median(list))
+            print ("The sum in the my_list is ",sum(list))
+            print ("The product in the my_list is ",product(list))
+            print ("The median of the my_list is ",median(list))
             break
         else:
             list.append(user_input)

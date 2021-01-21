@@ -19,9 +19,9 @@ def max_min():
         else:
             break
     min_value = minimum(list)
-    print("The smallest number on this list is: ", min_value)
+    print("The smallest number on this my_list is: ", min_value)
     max_value = maximum(list)
-    print ("The biggest number on this list is: ", max_value)
+    print ("The biggest number on this my_list is: ", max_value)
 #######################################################################################################################################################################
 #######################################################################################################################################################################
 def stats(numbers):

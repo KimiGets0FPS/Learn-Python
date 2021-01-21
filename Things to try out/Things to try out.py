@@ -33,8 +33,8 @@ try:
 except ValueError:
     print("There was an error")
 else:
-    list = user_input.split(" ")
-print(list)
+    my_list = user_input.split(" ")
+print(my_list)
 """
 dice = randint(1,7)
 if dice == 1:

@@ -4,44 +4,26 @@ class Main:
         self.i = i
 
     def display(self):
-        return self.nums
+        j = self.i % len(self.nums)  # temp variable j
+        modified = self.nums.copy()
+        modified[j] = [self.nums[j]]
+        # indexes[to_modify[index]] = replacements[index]
+        return modified
+
+    # this time using a string
+    def display_string(self):
+        j = self.i % len(self.nums)  # temp variable j
+        for num in self.nums:
+            if num == self.nums[j]:
+                return ...
 
     def to_the_right(self):
-        if self.i == 0 or self.i >= len(self.nums):
-            # resetting the value of i
-            if self.i > len(self.nums):
-                self.i = 0
-                self.nums.pop(-1)
-            self.nums.insert(1, [self.nums[0]])
-            self.nums.pop(0)
-            # modifying the previous number
-            self.nums.insert(-1, len(self.nums))
-            self.nums.pop(-1)
-
-        # for all of the other i values
-        elif self.i != 0 and self.i < len(self.nums):
-            self.nums.insert(self.i, [self.i+1])
-            self.nums.pop(self.i+1)
-            # modifying the previous number
-            self.nums.insert(self.i-1, self.i)
-            self.nums.pop(self.i)
         self.i += 1
         return self
 
 
-ttr = Main([1, 2, 3])
-
-# [1, 2, 3]
-print(ttr.display())
-# [[1], 2, 3]
-ttr.to_the_right()
-print(ttr.display())
-# [1, [2], 3]
-ttr.to_the_right()
-print(ttr.display())
-# [1, 2, [3]]
-ttr.to_the_right()
-print(ttr.display())
-# [[1], 2, 3]
-ttr.to_the_right()
-print(ttr.display())
+main = Main([1, 5, 2, 7, 3, 8])
+print('\n')
+for _ in range(12):
+    print(main.display())
+    main.to_the_right()

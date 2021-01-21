@@ -1,7 +1,7 @@
 """import pygame, sys
 from pygame.locals import *
 pygame.init()
-DISPLAYSURF = pygame.display.set_mode((500, 500), 0, 32)
+DISPLAY_SURF = pygame.display.set_mode((500, 500), 0, 32)
 pygame.display.set_caption("I'm trying out something ok?")
 # The colors
 BLACK = ( 0, 0, 0)
@@ -10,7 +10,7 @@ RED = (255, 0, 0)
 GREEN = ( 0, 255, 0)
 BLUE = ( 0, 0, 255)
 # Backround color
-DISPLAYSURF.fill(BLUE)
+DISPLAY_SURF.fill(BLUE)
 # code starts 
 
 
@@ -19,7 +19,7 @@ def draw():
     # y-axis = screen length(y-axis) - shape length(y-axis) / 2
     # The first number if for the x-axis and the second number is the y-axis
     # The third and fourth numbers are for the length and width
-    pygame.draw.ellipse(DISPLAYSURF, BLACK, (153, 153, 40, 40))
+    pygame.draw.ellipse(DISPLAY_SURF, BLACK, (153, 153, 40, 40))
 
 
 draw()

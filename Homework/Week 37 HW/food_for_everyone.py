@@ -2,7 +2,7 @@ import unittest
 
 
 class Person:
-    def __init__(self, name, like_food, hate_food):  #! like_food, hate_food --> list
+    def __init__(self, name, like_food, hate_food):  #! like_food, hate_food --> my_list
         self.name = name
         self.like_food = like_food
         self.hate_food = hate_food

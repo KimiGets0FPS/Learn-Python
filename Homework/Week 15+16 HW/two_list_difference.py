@@ -1,7 +1,7 @@
 def two_list_difference():
-    user_input_1 = input("Give me a list of numbers ")
+    user_input_1 = input("Give me a my_list of numbers ")
     set_1 = user_input_1.split(" ")
-    user_input_2 = input("Give me another list of numbers ")
+    user_input_2 = input("Give me another my_list of numbers ")
     set_2 = user_input_2.split(" ")
     intersect_set = set()
     new_set = set()
