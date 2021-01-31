@@ -9,14 +9,14 @@ def num_of_occurance():
         original_list = user_input.split(" ")
     for nums in original_list:
         if nums.isspace:
-            original_list.pop(nums)
+            original_list.pop(str(nums))
         elif nums in dict:
-            previuos_count = new_dict[nums]
-            previuos_count += 1
-            new_dict[nums] = previuos_count
+            previous_count = new_dict[nums]
+            previous_count += 1
+            new_dict[nums] = previous_count
         else:
             new_dict[nums] = 1
-    print(new_dict)
+    return new_dict
 
 
-num_of_occurance()
+print(num_of_occurance())
