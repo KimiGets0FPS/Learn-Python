@@ -19,9 +19,11 @@ def encode_morse_code(normal_input):
         '/': '-..-.'
     }
     output = []
-    for i in list(normal_input):
-        output.append(char_to_dots[i])
+    for i in normal_input:
+        output.append(char_to_dots[i])  # char_to_dots[i] is O(1)
     return ''.join(output)
+    # O(n) --> time complexity
+    # O(n) --> space complexity
 
 
 if __name__ == '__main__':
