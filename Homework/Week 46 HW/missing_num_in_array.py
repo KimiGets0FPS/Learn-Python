@@ -2,6 +2,10 @@ def missing_num_in_array(array):
     """
     >>> missing_num_in_array([0, 2, 3])
     1
+    >>> missing_num_in_array([1, 2, 3])
+    0
+    >>> missing_num_in_array([0, 1, 2])
+    3
     """
     expected_num = 0
     for _ in range(len(array)):
