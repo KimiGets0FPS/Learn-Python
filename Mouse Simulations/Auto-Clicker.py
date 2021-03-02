@@ -3,7 +3,7 @@ import threading
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
 
-delay_o = 0.001
+delay_o = 0.00001
 left_button = Button.left
 start_stop_key = KeyCode(char='`')
 exit_key = KeyCode(char='~')

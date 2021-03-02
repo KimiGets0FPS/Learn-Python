@@ -13,5 +13,4 @@ def friday_the_13th(month, year):
 
 if __name__ == '__main__':
     import doctest
-
     doctest.testmod(verbose=True)

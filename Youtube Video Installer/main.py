@@ -1,16 +1,14 @@
-from pytube import YouTube
+import pytube
 
-# Warning
-print("If no print 'Download Success', then there is a problem.")
 
 # PATH TO VIDEO
 SAVE_PATH = "E:/Download Youtube Videos"
 
 # OPTIONAL NAME
-NAME = ""
+NAME = "My Man throws computer into trash"
 
 # LINK FOR VIDEO
-link = "https://www.youtube.com/watch?v=UKAr7FsTNgY"
+LINK = "https://www.youtube.com/watch?v=7jvWb-rHipo"
 
-YouTube(link).streams.first().download(output_path=SAVE_PATH, filename=NAME)
-print("Download Success.")
+
+pytube.YouTube(LINK).streams.get_highest_resolution().download(output_path=SAVE_PATH, filename=NAME)

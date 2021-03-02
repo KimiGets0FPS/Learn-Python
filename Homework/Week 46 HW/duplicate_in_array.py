@@ -9,8 +9,8 @@ def find_duplicate(array):
             return True
         keep.append(i)
     return False
-    # Time complexity = O(n)
-    # Space complexity = O(2n-i) --> 2n - how many times it had to run.
+    # Time complexity = O(n^2)
+    # Space complexity = O(n)
 
 
 if __name__ == '__main__':
