@@ -17,40 +17,45 @@ def degree_of_an_array(nums):
     return output
 
 
-def dict_way(nums):
+def working_way(nums):
     """
-    >>> degree_of_an_array([3, 1, 2, 2, 3, 1])
+    >>> working_way([3, 1, 2, 2, 3, 1])
     2
-    >>> degree_of_an_array([1, 2, 2, 3, 1, 4, 2])
-    6
     """
-    length = {}
-    count = {}
+    max_num = 0
+    maximum_l = []
     for i in nums:
-        if i in count:
-            count[i] += 1
-        else:
-            count[i] = 0
-    maximum_list = []
-    maximum_ = 0
-    for i in count:
-        if count[i] > maximum_:
-            maximum_ = count[i]
-    maximum_list.append(i for i in count if i == maximum_)  # oh yeah just one line
-    for x in maximum_list:
-        for y in range(len(nums)):  # just getting rid of the first one
-            if nums[y] == count[x]:
-                break  # stops for loop
+        count = nums.count(i)
+        if count > max_num:
+            maximum_l.clear()
+            max_num = count
+        if count == max_num:
+            maximum_l.append(i)
+    output = {}
+    for i in maximum_l:
+        count_nums = len(nums)
+        for x in maximum_l:
+            if x == i:
+                break
             else:
-                count -= 1
-        for z in range(len(nums) - 1, -1, -1):  # reversed operation of the top one
-            if nums[z] == count[x]:
-                break  # stops the loop
+                count_nums -= 1
+        for y in reversed(maximum_l):
+            if y == i:
+                break
             else:
-                count -= 1
-        length[x] = count
-    min_val = length
-    return [i for i in length if length[i] > min_val]
+                count_nums -= 1
+        output[i] = count_nums
+    min_value = output[1]
+    for key, value in output.items():
+        if value < min_value:
+            min_value = value
+    return min_value
+
+    # max_out = 0
+    # for i in output:
+    #     if output[i] > max_out:
+    #         max_out = i
+    # return max_out
 
 
 if __name__ == '__main__':
