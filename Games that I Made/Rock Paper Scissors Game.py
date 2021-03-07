@@ -15,12 +15,12 @@ def play_a():
         userChoice = (int(input("选择'石头','剪刀'或'布'（输入数字） ")))
         
         if userChoice != 1 and userChoice != 2 and userChoice != 3:
-            print ("Has to be 1,2 or 3")
-        else :
+            print("Has to be 1,2 or 3")
+        else:
             pcChoice = r.randint(1, 3)
             # Draw condition
             if userChoice == pcChoice:
-                print ("平局!!!")
+                print("平局!!!")
                 draw = draw + 1
                 pass
             # When you lose
@@ -50,7 +50,6 @@ def play_a():
                 print("计算机选了： ", choiceList[pcChoice])
                 uw = uw + 1
                 pcLives = pcLives - 1
-            
             elif userChoice == 3 and pcChoice == 2:
                 print("你赢了!!!")
                 print("计算机选了： ", choiceList[pcChoice])
@@ -80,10 +79,10 @@ def play_b():
         print("1. Rock")
         print("2. Paper")
         print("3. Scissors")
-        userChoice = (int(input("Choose'Rock','Paper'or'Scissors'type the number you want: ")))
+        userChoice = (int(input("Choose 'Rock','Paper' or ' Scissors' type the number you want: ")))
         
         if userChoice != 1 and userChoice != 2 and userChoice != 3:
-            print ("Has to be 0,1, or 2")
+            print("Has to be 0,1, or 2")
         else:
             pcChoice = r.randint(1, 3)
             # Draw condition
@@ -118,7 +117,6 @@ def play_b():
                 print("The bot chose ", choiceList[pcChoice])
                 uw = uw + 1
                 pcLives = pcLives - 1
-            
             elif userChoice == 3 and pcChoice == 2:
                 print("HOW, YOU ACTUALLY WON!!!")
                 print("The bot chose ", choiceList[pcChoice])
@@ -138,7 +136,7 @@ def play_b():
 
 
 while True:
-    print("1. The Asain way")
+    print("1. The Asian way")
     print("2. The NoOb WaY")
     ask = int(input("Which way do you want???（Choose the number in the front） "))
     if ask == 1:

@@ -6,9 +6,7 @@ def first_before_second(sentence, first, second):
     False
     """
     for i in range(len(sentence)-1, -1, -1):
-        if sentence[i] == first:
-            return False
-        if sentence[i] == second:
+        if sentence[i] != first and sentence[i] == second:
             return True
     return False
 

@@ -4,7 +4,7 @@ import time as t
 
 def main():
     user_lives = 3
-    user_takes_the_L = 0
+    # user_takes_the_L = 0
     pc_lives = 3
     pc_takes_the_L = 0
     while user_lives > 0 and pc_lives > 0:
@@ -14,10 +14,9 @@ def main():
             if pc_choice == 1:
                 pcw_choice = "Rock"
             elif pc_choice == 2:
-                pcw = "Paper"
+                pcw_choice = "Paper"
             elif pc_choice == 3:
                 pcw_choice = "Scissors"
-            # print(f"The computer chose:{pc_choose}")
             t.sleep(0.5)
             # When user win
             if user_input == 1 and pc_choice == 3:
@@ -37,7 +36,6 @@ def main():
                 print(f"The computer chose: {pcw_choice}!")
                 pc_lives -= 1
                 print(f"The computer only has {pc_lives} lives left!")
-
 
                 """1 is Rock, 2 is Paper, 3 is Scissors"""
             # When user lose
