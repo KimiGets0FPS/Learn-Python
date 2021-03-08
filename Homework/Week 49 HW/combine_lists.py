@@ -1,6 +1,6 @@
 def combine_lists(n1, n, n2, m):
     """
-    >>> combine_lists([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+    >>> combine_lists([1, 2, 3], 3, [2, 5, 6], 3)
     [1, 2, 2, 3, 5, 6]
     """
     output = []

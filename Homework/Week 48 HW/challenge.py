@@ -13,13 +13,13 @@ def monotonic(nums):
 
 def one_loop(nums):
     """
-    >>> one_loop([1, 2, 3, 4])
+    >>> another_way_one_loop([1, 2, 3, 4])
     True
-    >>> one_loop([1, 2, 2, 4])
+    >>> another_way_one_loop([1, 2, 2, 4])
     True
-    >>> one_loop([1, 2, 1, 3])
+    >>> another_way_one_loop([1, 2, 1, 3])
     False
-    >>> one_loop([4, 3, 2, 1])
+    >>> another_way_one_loop([4, 3, 2, 1])
     True
     """
     ascend = True
