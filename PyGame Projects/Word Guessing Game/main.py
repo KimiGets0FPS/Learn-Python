@@ -25,7 +25,7 @@ class Main:
 
     def guess_letter(self, guess):
         if guess not in self.word: return False
-        temp = self.word
+        return True
 
     def guess_letters(self, guess):
         for i in list(guess):

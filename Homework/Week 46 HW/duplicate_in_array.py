@@ -1,16 +1,15 @@
 def find_duplicate(array):
     """
-    >>> find_duplicate([1, 2, 3, 2, 1])
+    >>> find_duplicate([1, 2, 2, 3, 4])
     True
+    >>> find_duplicate([1, 2, 3, 4])
+    False
     """
-    keep = []
-    for i in array:
-        if i not in keep:
+    sorted_list = sorted(array)
+    for i in range(1, len(sorted_list)):
+        if sorted_list[i] == sorted_list[i-1]:
             return True
-        keep.append(i)
     return False
-    # Time complexity = O(n^2)
-    # Space complexity = O(n)
 
 
 if __name__ == '__main__':
