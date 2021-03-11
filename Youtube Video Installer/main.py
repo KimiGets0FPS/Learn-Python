@@ -2,13 +2,13 @@ import pytube
 
 
 # PATH TO VIDEO
-SAVE_PATH = "E:/Download Youtube Videos"
+SAVE_PATH = ""
 
 # OPTIONAL NAME
-NAME = "My Man throws computer into trash"
+NAME = ""
 
 # LINK FOR VIDEO
-LINK = "https://www.youtube.com/watch?v=7jvWb-rHipo"
+LINK = ""
 
 
 pytube.YouTube(LINK).streams.get_highest_resolution().download(output_path=SAVE_PATH, filename=NAME)

@@ -1,6 +1,6 @@
 from books import Book
 from users import Users
-from manage import Manage
+from manage_books import Manage
 
 
 book = Book()
@@ -9,9 +9,9 @@ manage = Manage()
 
 
 def menu():
-    gusername = input("Enter your username: ")
-    gpassword = input("Enter your password: ")
-    if users.signin(gusername, gpassword) == True:
+    get_username = input("Enter your username: ")
+    get_password = input("Enter your password: ")
+    if users.sign_in(get_username, get_password):
         while True:
             print("----------------------------------------")
             user_input = input(
@@ -28,13 +28,11 @@ def menu():
 
             # Option 1, Borrow
             if user_input == '1':
-                gbook = input("What book would you like to borrow: ")
-                print(manage.borrow_book(gbook))
+                print(manage.borrow_book(book=input("What book would you like to borrow: ")))
 
             # Option 2, Return
             elif user_input == '2':
-                gbook = input("What book would you like to return: ")
-                print(manage.return_book(gbook))
+                print(manage.return_book(book=input("What book would you like to return: ")))
 
             # Option 3, See Current Available
             elif user_input == '3':
@@ -46,21 +44,17 @@ def menu():
 
             # Option 5, Details
             elif user_input == '5':
-                gbook = input("What book do you want to see: ")
-                book.book_details(gbook)
+                book.book_details(input("What book do you want to see: "))
 
             # Option 6, Add Book
             elif user_input == '6':
-                getbook = input("Book title: ")
-                getprice = input("Book price: ")
-                getauthor = input("Book author: ")
-                manage.add_book(getbook, getprice, getauthor)
+                manage.add_book(book=input("Book title: "), price=input("Book price: "), author=input("Book author: "))
 
             # Option 7, Delete Book
             elif user_input == '7':
-                getbook = input("Book title: ")
-                getconfimation = input("Are you sure (yes/no, default is yes): ")
-                manage.delete_book(getbook, getconfimation)
+                get_book = input("Book title: ")
+                get_confirmation = input("Are you sure (yes/no, default is yes): ")
+                manage.delete_book(get_book, get_confirmation)
 
             # Option 8 Modify Book
             elif user_input == '8':
@@ -68,12 +62,15 @@ def menu():
 
             # Option 9, Quit
             elif user_input == '9':
-                return "Thanks for coming!"
+                print("Thanks for coming!")
+                break
 
             else:
                 print("There is no such option.")
     else:
-        return 'Login failed.'
+        print('Login Failed')
+    return
 
 
-menu()
+if __name__ == '__main__':
+    menu()
