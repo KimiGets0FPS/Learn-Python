@@ -10,9 +10,9 @@ def find_index(nums: list[int], target: int) -> int:
     if target not in nums:
         nums.append(target)
         return sorted(nums).index(target)
-    for i in nums:
-        if i == target:
-            return nums.index(i)
+    for i in range(len(nums)):
+        if nums[i] == target:
+            return i
 
 
 if __name__ == '__main__':
