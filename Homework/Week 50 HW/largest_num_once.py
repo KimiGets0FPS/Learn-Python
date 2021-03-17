@@ -4,20 +4,27 @@ def largest_num_once(nums: list[int]):
     2
     >>> largest_num_once([1, 2, 2, 3])
     3
+    >>> largest_num_once([2, 1, 4, 5, 2, 1, 4])
+    5
     """
+    # Criteria: Find the largest number in a list that only appeared once
     temp = {}
     for i in nums:
-        if temp[i] is None:  # TIME COMPLEXITY: O(1)!!!
+        if i not in temp:  # Had to use this because that one didn't work
+            # if temp[i] is False:
             temp[i] = 0
         temp[i] += 1
     max_val = 0
     for x, y in temp.items():
-        if y == 0 and max_val > x:
-            return x
-    return -1
+        if y == 1 and max_val < x:
+            max_val = x
+    if max_val == 0:
+        return -1
+    return max_val
     # Time complexity: O(n)
 
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod(verbose=True)
