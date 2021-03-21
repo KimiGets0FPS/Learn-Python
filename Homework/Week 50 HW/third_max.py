@@ -4,18 +4,20 @@ def third_max(nums: list[int]):
     1
     >>> third_max([1, 2])
     2
+    >>> third_max([2, 1, 4, 3])
+    2
+    >>> third_max([2, 1, 3, 3, 2, 4, 5])
+    3
     """
-    # Criteria: Given integer array nums, return the third maximum number in this array. If the third maximum does
-    # not exist, return the maximum number.
-    sorted_nums = sorted(nums)
-    max1, max2, max3 = 0, 0, 0  # Has to be the same type of value
-    for i in sorted_nums:
-        if i > max1:
-            max3, max2, max1 = max2, max1, i
-    if max3 != 0:
-        return max3  # really just max3
-    return max1  # really just max1
-    # Time complexity: O(n log n)
+    maximums = set()  # defining a set
+    for num in nums:
+        maximums.add(num)  # adding the nums into the maximums without duplicates
+        if len(maximums) > 3:  # checking if len(maximums) is bigger than three
+            maximums.remove(min(maximums))  # just remove the useless small number
+    if len(maximums) == 3:
+        return min(maximums)  # if the length of maximums is 3 then just return the smallest number
+    return max(maximums)  # else then just return the biggest boi
+    # Time complexity: O(n)
 
 
 if __name__ == '__main__':
