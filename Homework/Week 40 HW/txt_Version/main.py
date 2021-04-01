@@ -13,7 +13,7 @@ def menu():
     get_password = input("Enter your password: ")
     if users.sign_in(get_username, get_password):
         while True:
-            print("----------------------------------------")
+            print("\n----------------------------------------\n")
             user_input = input(
                 "1.) Borrow Books\n"
                 "2.) Return Books\n"
@@ -58,7 +58,10 @@ def menu():
 
             # Option 8 Modify Book
             elif user_input == '8':
-                ...
+                print(manage.modify_book(input("Enter the book name (required):"),
+                                         input("Enter new name (): "),
+                                         int(input("Enter new price (): ")),
+                                         input("Enter new author (): ")))
 
             # Option 9, Quit
             elif user_input == '9':

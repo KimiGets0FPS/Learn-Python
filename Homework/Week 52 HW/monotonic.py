@@ -1,6 +1,6 @@
 def monotonic(nums: list[int]) -> bool:
     """
-    >>> monotonic([1,2,2,3])
+    >>> monotonic([1, 2, 2, 3])
     True
     """
     up = True
@@ -11,7 +11,15 @@ def monotonic(nums: list[int]) -> bool:
         elif nums[i] > nums[i-1]:  # checking if the previous number is bigger, if bigger, then it's descending.
             down = False
     return up or down  # if either one is True,  returns True, if none of them are True, then return False
-    # time complexity: O(n)
+    # Time complexity: O(n)
+
+
+def another_way(nums: list[int]):
+    """
+    >>> another_way([1, 2, 2, 3])
+    True
+    """
+    ...
 
 
 if __name__ == '__main__':

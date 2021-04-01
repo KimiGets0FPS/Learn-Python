@@ -16,20 +16,24 @@ class Main:
             if random.choice(possibility):
                 self.word = word.rstrip()
                 self.replacement = '-' * len(self.word)
-        if self.word: return True
+        if self.word:
+            return True
         return False
 
     def guess_word(self, guess):
-        if guess == self.word: return True
+        if guess == self.word:
+            return True
         return False
 
     def guess_letter(self, guess):
-        if guess not in self.word: return False
+        if guess not in self.word:
+            return False
         return True
 
     def guess_letters(self, guess):
         for i in list(guess):
-            if i not in self.word: return False
+            if i not in self.word:
+                return False
         return True  # For now...
 
     def current_words(self):

@@ -38,7 +38,7 @@ class Manage:
         return "There is no such book."
 
     def modify_book(self, book, title='', price=0, author=''):
-        if book in self.read_borrowed:
+        if book and book in self.read_borrowed:
             if title.title():
                 ...
             if price:

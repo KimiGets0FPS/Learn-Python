@@ -17,15 +17,10 @@ class Book:
     def current_available_books(self):
         available_books = []
         for book in self.books.readlines():
-            book_name = book.split('\n')
-            if book_name not in self.borrowed_books:
-                available_books.append(book_name)
+            available_books.append(book)
         if not available_books:
             return "There aren't any available books."
         return available_books
-        # if len(available_books) > 10:
-        #     return f"{', '.join(available_books)[:10]}"
-        # return f"{', '.join(available_books)}"
 
     def current_return_books(self, output):
         for book in self.books.readlines():
