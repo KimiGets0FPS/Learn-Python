@@ -29,6 +29,8 @@ def find_smallest_index(nums: list[int], target: int) -> int:
     """
     >>> find_smallest_index([1, 2, 2, 3, 3, 4], 2)
     1
+    >>> find_smallest_index([1, 2, 3], 4)
+    -1
     """
     import math
     found = math.inf
