@@ -1,7 +1,7 @@
-def factorial_recursion(times: int, multiplier=1) -> int:
-    if times > 0:
-        return times * factorial_recursion(times-1, multiplier*times)
-    return multiplier
+def factorial_recursion(times: int) -> int:
+    if times > 1:
+        return times * factorial_recursion(times-1)
+    return times
 
 
 if __name__ == '__main__':
