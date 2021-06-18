@@ -14,4 +14,3 @@ def course_schedule(num_courses: int, prerequisites: list[list[int]]) -> bool:
 if __name__ == '__main__':
     import doctest
     doctest.testmod(verbose=True)
-
