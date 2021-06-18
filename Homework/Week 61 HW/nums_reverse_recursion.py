@@ -6,3 +6,4 @@ def nums_reverse_recursion(num):
 
 if __name__ == '__main__':
     print(nums_reverse_recursion(25))
+    print(nums_reverse_recursion(10))

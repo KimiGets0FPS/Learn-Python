@@ -2,6 +2,8 @@ def binary_recursive(nums: list[int], target: int, low: int, high: int):
     """
     >>> binary_recursive([1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 8, 15], 4, 0, 11)  # High = len(nums) - 1
     True
+    >>> binary_recursive([1, 3, 4, 6, 8, 9, 10, 11, 12], 10, 0, 8)
+    True
     >>> binary_recursive([3, 4, 5, 7, 9, 9, 20, 25, 54, 123, 2354, 3456, 456456, 2345254], 6, 0, 13)
     False
     >>> binary_recursive([0], 10, 0, 0)
