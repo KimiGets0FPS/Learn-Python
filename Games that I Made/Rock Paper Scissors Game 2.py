@@ -6,7 +6,7 @@ def main():
     user_lives = 3
     # user_takes_the_L = 0
     pc_lives = 3
-    pc_takes_the_L = 0
+    pc_takes_the_l = 0
     while user_lives > 0 and pc_lives > 0:
         user_input = int(input("1. Rock\n2. Paper\n3. Scissors\nChoose a number: "))
         if user_input == 1 or user_input == 2 or user_input == 3:
@@ -57,14 +57,12 @@ def main():
             # Draw
             elif user_input == pc_choice:
                 print("Draw!")
-            else:
-                pass
         # if the user decides not to obey the rules
         else:
             print("Choose 1, 2, or 3!")
 
         if user_lives == 0:
-            print(f"You lost!\nYou won {pc_takes_the_L} times")
+            print(f"You lost!\nYou won {pc_takes_the_l} times")
         elif pc_lives == 0:
             print(f"You Won!\nYou lost {pc_lives} times!")
 

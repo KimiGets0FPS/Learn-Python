@@ -9,8 +9,8 @@ def homework_1():
     if product < 1000:
         print(product)
     else:
-        sum = my_list[2] + my_list[1]
-        print(sum)
+        sum_num = my_list[2] + my_list[1]
+        print(sum_num)
     print(list)
 
 

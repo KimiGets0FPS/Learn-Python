@@ -12,7 +12,6 @@ def additional_homework_5():
         print(f"There are {count} digits in the number {user_input}")
     """Or I could do it like this LMAO"""
     def do_2():
-        count = 0
         user_input = int(input("Enter any integer and I'll tell you how many digits there are: "))
         print(f"There are {len(str(abs(user_input)))} digits in the number {user_input}")
 

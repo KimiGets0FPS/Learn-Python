@@ -1,5 +1,5 @@
 def square_cube(num_1, num_2):
-    if num_1**0.5 == num_2**(1/3):
+    if num_1 ** 0.5 == num_2 ** (1/3):
         return True
     else:
         return False

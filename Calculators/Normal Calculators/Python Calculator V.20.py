@@ -1,14 +1,20 @@
 from random import *
 from math import *
 numList = []
+
+
 def piPeri():
     while True:
         num = float(input("What do you want for your pi perimeter problem(put 0 is you want to stop): "))
-        print (2 * num * pi)
+        print(2 * num * pi)
+
+
 def piArea():
     while True:
         num = float(input("What do you want for your pi area problem(put 0 is you want to stop): "))
-        print (num * num * pi)
+        print(num * num * pi)
+
+
 def addition():
     while True:
         num = float(input("What do you want for your addition problem(put 0 is you want to stop): "))
@@ -16,7 +22,9 @@ def addition():
             break
         else:
             numList.append(num)
-    print ("The sum is ",sum(numList))
+    print("The sum is ", sum(numList))
+
+
 def subtraction():
     while True:
         num = float(input("What do you want for your subtraction problem(put 0 is you want to stop): "))
@@ -24,12 +32,14 @@ def subtraction():
             break
         else:
             numList.append(num)
-    diff=numList[0]
-    i=1
-    while (i < len(numList)):
+    diff = numList[0]
+    i = 1
+    while i < len(numList):
         diff = diff - numList[i]
         i = i + 1
     print('The difference is ', diff)
+
+
 def multiplication():
     while True:
         num = float(input("What do you want for your multiplication problem(put 0 is you want to stop): "))
@@ -37,12 +47,13 @@ def multiplication():
             break
     product = ''
     for x in numList:
-        product = product * x         
-    print ('The product was: ',str(product))
+        product = product * x
+    print('The product was: ', str(product))
+
 
 # Running the code
 multiplication()
-piPeri
+piPeri()
 piArea()
 addition()
 subtraction()

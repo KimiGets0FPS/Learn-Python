@@ -12,10 +12,10 @@ def sum_of_two(num_1, num_2):
     >>> sum_of_two('123456789123456789123456789', '987654321987654321987654329876543')
     '987654445444443445444443453333332'
     """
-    #* Seperating everything
+    # Separating everything
     list_1 = list(num_1)     
     list_2 = list(num_2)
-    #* Making sure that everything is the same, so there aren't going to be any errors in the future.
+    # Making sure that everything is the same, so there aren't going to be any errors in the future.
     if len(list_1) != len(list_2):
         if len(list_1) > len(list_2):
             while len(list_1) != len(list_2):
@@ -25,13 +25,13 @@ def sum_of_two(num_1, num_2):
                 list_1.insert(0, '0')
     list_1.insert(0, '0')
     list_2.insert(0, '0')
-    #* Making everything an integer for list_1 and list_2
+    # Making everything an integer for list_1 and list_2
     i = 0
     for _ in list_1:
         list_1[i] = int(list_1[i])
         list_2[i] = int(list_2[i])
         i += 1
-    #* Calcualtion starts here
+    # Calcualtion starts here
     i = -1
     for _ in list_1:
         list_1[i] += list_2[i]
@@ -44,7 +44,7 @@ def sum_of_two(num_1, num_2):
         list_1.pop(0)
     if list_2[0] == '-':
         list_2.pop(0)
-    #* Returning the final answer
+    # Returning the final answer
     return ''.join(list_1)
 
 

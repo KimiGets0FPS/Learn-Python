@@ -9,8 +9,8 @@ def homework_1():
     if product < 1000:
         print(product)
     else:
-        sum = my_list[2] + my_list[1]
-        print(sum)
+        sum_num = my_list[2] + my_list[1]
+        print(sum_num)
     print(list)
 
 
@@ -23,15 +23,16 @@ def homework_2():
     random_number = 10
     while random_number > 0:
         user_input = int(input("Want number do you want?(You only have to do this 10 times) "))
-        list.append(user_input)
+        my_list.append(user_input)
         random_number -= 1
     for _ in my_list:
         if i == 0:
-            print("The currrent number is ", my_list[i])
+            print("The current number is ", my_list[i])
         else:
-            previuos_number = my_list[i - 1]
-            sum = previuos_number + my_list[i]
-            print(f"The current number is{my_list[i]}and the previuos number is {previuos_number} and the sum is{sum}")
+            previous_number = my_list[i - 1]
+            sum_num = previous_number + my_list[i]
+            print(f"The current number is{my_list[i]}and the previous number is {previous_number} and the sum is "
+                  f"{sum_num}")
         i += 1
 
 
@@ -85,7 +86,7 @@ def homework_5():
             else:
                 print("This is false!")
             break
-        list.append(user_input)
+        my_list.append(user_input)
 
 
 homework_5()
@@ -93,16 +94,15 @@ homework_5()
 
 def additional_hw():
     i = 0
-    list = []
+    my_list = []
     print("you have to do like this : 1,2,3,4,5 \nand ill put it like this: '1','2','3','4','5',")
     user_input = input("Please do not put spaces between the numbers!\nWhat set of numbers do you want? ")
     split = user_input.split(",")
     for x in split:
         final = f'{split[i]}'
-        list.append(final)
+        my_list.append(final)
         i += 1
-    print(list)
+    print(my_list)
 
 
 additional_hw()
-

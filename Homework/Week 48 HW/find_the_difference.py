@@ -1,8 +1,10 @@
 def find_the_difference(first, compare):
     missing_nums = []
     for i in compare:
-        try: first.index(i)
-        except ValueError: missing_nums.append(i)
+        try:
+            first.index(i)
+        except ValueError:
+            missing_nums.append(i)
     return missing_nums
 
 
@@ -16,7 +18,7 @@ def using_zip(first, compare):
     output = []
     temp = 0
     for i in range(len(first)):
-        if compare[i+temp] != first[i]:
+        if compare[i + temp] != first[i]:
             output.append(i)
             temp += 1
     return output
