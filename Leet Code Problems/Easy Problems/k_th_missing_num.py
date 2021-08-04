@@ -1,4 +1,4 @@
-# TODO: WORK ON THIS
+# TODO: SUBMIT THIS PROBLEM
 # https://leetcode.com/problems/kth-missing-positive-number/
 
 
@@ -10,13 +10,14 @@ def kth_missing_num(nums: list[int], target: int) -> int:
     6
     """
     expected = 0
-    missing_num = 0
-    for i in range(len(nums)):
-        if expected != nums[i] and missing_num == target:
-            return nums[i]
-        elif expected == nums[i] or missing_num != target:
-            missing_num += 1
+    count = 0  # Counting the xth missing number
+    for i in range(len(nums), 1):
+        if nums[i] != expected:
+            count += 1
             expected += 1
+        elif nums[i] == expected:
+            expected += 1
+    return count
 
 
 if __name__ == '__main__':

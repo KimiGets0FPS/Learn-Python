@@ -3,6 +3,7 @@ import logging
 
 logging.basicConfig(filename="mouse_log.txt", level=logging.DEBUG, format='%(message)s')  # %(asctime)s:
 
+
 def on_move(x, y):
     logging.info("Mouse moved to ({0}, {1})".format(x, y))
 

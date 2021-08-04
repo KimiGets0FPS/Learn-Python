@@ -1,7 +1,3 @@
-# TODO: FINISH THIS PROBLEM
-# LINK: https://leetcode.com/problems/concatenation-of-array/
-
-
 def solution(nums: list[int]):
     """
     >>> solution([1, 2, 1])

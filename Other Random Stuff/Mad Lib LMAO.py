@@ -1,5 +1,5 @@
 def myinput():
-    print ("Don't repeat anything!!!!!!! ")
+    print("Don't repeat anything!!!!!!! ")
     # ask the noun from the user
     ###
     askn1 = str(input("What do you want for your first noun???(name) "))
@@ -33,21 +33,22 @@ def myinput():
     askadv2 = str(input("What do you want for your second adverb???(any dying things) "))
 
     # the actual story
-    print ("""Once upon a time, there was  """ + str(askn1) + """
-and he was very """ + str (askadj1) + """. One time, he """  + str(askv1) + """
+    print("""Once upon a time, there was  """ + str(askn1) + """
+and he was very """ + str(askadj1) + """. One time, he """ + str(askv1) + """
 a guy. It was a bit weird and he admitted it himself. Then, he met a witch
- and she turned him into (a) """ + str(askn2) +""". It was so """ + str(askadj2) + """
- that """ + str(askn3)+ """ literally laghed his face off. It was embrrassing
-so """ + str(askn4) +""" the teacher """ + str(askv2) +" so " + str(askadv2) + """ him so
+ and she turned him into (a) """ + str(askn2) + """. It was so """ + str(askadj2) + """
+ that """ + str(askn3) + """ literally laghed his face off. It was embrrassing
+so """ + str(askn4) + """ the teacher """ + str(askv2) + " so " + str(askadv2) + """ him so
 hard that his belly button literally got untied and you know what has happened. It was so
-against the law that pricipal""" + str(askn2)+""" came into action and """ + str(askv4)+ """
-'There shall be no more school because of the'""" + str(askn5)+ """ virus and everyone was"""
-+ str(askadv2) + """!!!!!!!!!!!!!!!!!!!!!!!!!!!!!""")
-    print (""" ________     |    |  _____        _____   |\     |  |\
+against the law that pricipal""" + str(askn2) + """ came into action and """ + str(askv4) + """
+'There shall be no more school because of the'""" + str(askn5) + """ virus and everyone was"""
+          + str(askadv2) + """!!!!!!!!!!!!!!!!!!!!!!!!!!!!!""")
+    print(""" ________     |    |  _____        _____   |\     |  |\
                   |         |    | |            |        | \    |  | \
                   |         |____| |            |____    |  \   |  |  \
                   |         |    | |____        |        |   \  |  |  /
                   |         |    | |            |        |    \ |  | /
                   |         |    | |_____       |_____   |     \|  |/""")
-myinput()    
 
+
+myinput()
