@@ -4,12 +4,13 @@ num = []
 for i in range(n):
     num.append(int(input()))
 
-output = []
-for i in range(len(num)):
+output = 0
+for i in range(len(num)):  # assume nums[i] is the smallest diamond in the result
     count = 0
     for j in range(len(num)):
-        if num[j] - num[i] <= k and num[i] <= num[j]:
+        if 0 <= num[j] - num[i] <= k:
             count += 1
-    output.append(count)
+    if count > output:
+        output = count
 
-print(max(output))
+print(output)

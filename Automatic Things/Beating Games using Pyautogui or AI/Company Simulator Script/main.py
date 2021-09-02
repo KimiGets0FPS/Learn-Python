@@ -16,7 +16,7 @@ def find_3():
 
 
 def press():
-    for i in range(100):
+    for _ in range(100):
         keyboard.press_and_release('e')
 
 

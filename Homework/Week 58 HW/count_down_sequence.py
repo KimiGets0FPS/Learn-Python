@@ -22,10 +22,13 @@ def count_down_sequence(nums: list[int]) -> list[int, list[int]]:
             count[i] -= 1
     # now the other stuff
     output = []
+
+    expected = 0
     for i in range(len(sorted_nums)):
         for j in range(len(sorted_nums)):
             ...
-    return output
+    output.insert(len(output), 0)
+    return output[::-1]
 
 
 if __name__ == '__main__':
