@@ -8,9 +8,9 @@ def problem_1(n: int, l: int, nums: list[int]) -> int:
     2
     >>> problem_1(4, 1, [1, 100, 2, 3])
     2
-    >>> problem_1(5, 1, [3,0,6,1,5])
+    >>> problem_1(5, 1, [3, 0, 6, 1, 5])
     3
-    >>> problem_1(3, 1, [1,3,1])
+    >>> problem_1(3, 1, [1, 3, 1])
     1
     """
     h_index = 0  # the maximum h-index
