@@ -1,12 +1,11 @@
 from user_settings import User
 from book import Book
 
-
 user = User({'Brian': ['1234'], 'Ryan': ['2354']}, {'Kimi': ['3456']})
 
 booksetting = Book({'Harry Potter 1': ['J.K. Rowling', '13'],
                     'Harry Potter 2': ['J.K. Rowling', '14']},
-                    ['Harry Potter 1'], ['Harry Potter 2'])
+                   ['Harry Potter 1'], ['Harry Potter 2'])
 
 
 def library_main():
@@ -28,32 +27,32 @@ def library_main():
                 "9.) Quit\n"
                 "Your answer (enter the number): ")
 
-            #! 1
+            # ! 1
             if userinpt == '1':
                 gbook = input('What book do you want to borrow: ')
                 print(booksetting.borrow_book(gbook))
 
-            #! 2
+            # ! 2
             elif userinpt == '2':
                 rbook = input('What book do you want to return: ')
                 print(booksetting.return_book(rbook))
 
-            #! 3
+            # ! 3
             elif userinpt == '3':
                 print(booksetting.see_available_books)
 
-            #! 4
+            # ! 4
             elif userinpt == '4':
                 print(booksetting.borrowed_book)
 
-            #! 5
+            # ! 5
             elif userinpt == '5':
                 cbook = input("What book details do you want to see: ")
                 print(booksetting.check_book(cbook))
 
-            #! 6, 7, and 8
+            # ! 6, 7, and 8
             elif userinpt == '6' or userinpt == '7' or userinpt == '8':
-                #* all requires admin access so it's better to make it together
+                # * all requires admin access so it's better to make it together
                 if user.signin(get_name, get_passw) != 'Staff':
                     get_staff = input(f'What is your username: ')
                     get_pass = input(f'What is your password: ')
@@ -62,23 +61,23 @@ def library_main():
                 else:
                     bbook = input('Book name: ')
 
-                    #! 6
+                    # ! 6
                     if userinpt == '6':
                         bprice = input('Book price: ')
                         bauthor = input('Book author: ')
                         print(booksetting.add_book(bbook, bprice, bauthor))
 
-                    #! 7
+                    # ! 7
                     elif userinpt == '7':
                         print(booksetting.delete_book(bbook))
 
-                    #! 8
+                    # ! 8
                     else:
                         gprice = input('Enter the new price for the book: ')
                         guathor = input('Enter the new author for the book: ')
                         print(booksetting.modify(bbook, gprice, guathor))
 
-            #! 9
+            # ! 9
             elif userinpt == '9':
                 break
 

@@ -5,17 +5,17 @@ for i in range(int(fin.readline())):
 
 # Solution
 
-# creating every non-repeating possibility for the lifeguards to be fired.
-lifeguard = sorted(nums)
+nums.sort()
 output = 0
-for i in range(len(lifeguard)-1):
-    new = lifeguard.copy()
+for i in range(len(nums)-1):
+    new = nums.copy()
     new.pop(i)
     covered = new[-1][1] - new[0][0]
     for j in range(len(new)-1):
         if new[j][1] < new[j+1][0]:
             covered -= new[j+1][0] - new[j][1]
     output = max(output, covered)
+
 
 print(output)
 
