@@ -11,7 +11,7 @@ booksetting = Book({'Harry Potter 1': ['J.K. Rowling', '13'],
 def library_main():
     get_name = input('What is your username: ')
     get_passw = input('What is your password: ')
-    if user.signin(get_name, get_passw) == True or 'Staff':
+    if user.signin(get_name, get_passw) is True or 'Staff':
         print(f"Hello, {get_name.title()}!")
         while True:
             print('------------------------------------------')
