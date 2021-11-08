@@ -1,8 +1,9 @@
 import os
 import time
 import sys
-import math
-from pynput.keyboard import KeyCode, Listener
+import random
+import curses
+from curses import KEY_RIGHT, KEY_LEFT, KEY_UP, KEY_DOWN
 
 # IMPORTANT: MUST RUN ON CMD/TERMINAL
 
@@ -54,17 +55,3 @@ while True:
         if again.lower() == 'no':
             break
 
-
-def on_press(key):
-    if key == 'w':
-        print("Pressed 'W'")
-    elif key == 'a':
-        print("Pressed 'A'")
-    elif key == 's':
-        print("Pressed 'W'")
-    elif key == 'd':
-        print("Pressed 'W'")
-
-
-with Listener(on_press=on_press) as listener:
-    listener.join()

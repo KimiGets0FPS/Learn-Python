@@ -43,7 +43,7 @@ hard that his belly button literally got untied and you know what has happened. 
 against the law that pricipal""" + str(askn2) + """ came into action and """ + str(askv4) + """
 'There shall be no more school because of the'""" + str(askn5) + """ virus and everyone was"""
           + str(askadv2) + """!!!!!!!!!!!!!!!!!!!!!!!!!!!!!""")
-    print(""" ________     |    |  _____        _____   |\     |  |\
+    print(""" ________      |    |  _____        _____   |\     |  |\
                   |         |    | |            |        | \    |  | \
                   |         |____| |            |____    |  \   |  |  \
                   |         |    | |____        |        |   \  |  |  /

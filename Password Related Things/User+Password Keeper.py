@@ -39,11 +39,13 @@ def get_new_name():
         json.dump(name, f)
     return name
 
+
 def get_new_username():
     username = input("What is your username? ")
     with open(filename, 'w') as f:
         json.dump(username, f)
     return username
+
 
 def get_new_password():
     password = input("What is your password? ")
@@ -51,7 +53,6 @@ def get_new_password():
         json.dump(password, f)
     return password
     
-
 
 def greet_user():
     name = get_stored_name()
@@ -72,4 +73,4 @@ def greet_user():
             pass
 
 
-greet_user() 
+greet_user()

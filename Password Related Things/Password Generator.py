@@ -2,7 +2,7 @@ import string
 from random import *
 
 
-number_of_passwords = int(input("How many passwords do you want?? "))
+number_of_passwords = int(input("How many passwords.txt do you want?? "))
 while number_of_passwords > 0:
     print("A password larger or equal to 10 is unpredictable!!!")
     nums_of_value = int(input("How much digits do you want in your password?(number has to be larger than 10!!!) "))

@@ -1,12 +1,15 @@
 DNA = input()
 output = 0
-for i in range(len(DNA)):
-    count = 1
-    for j in range(i+1, len(DNA)):
-        if DNA[i] != DNA[j]:
-            break
-        else:
-            count += 1
-    output = max(output, count)
+current = DNA[0]
+count = 1
+for i in range(1, len(DNA)):
+    if current != DNA[i]:
+        current = DNA[i]
+        output = max(output, count)
+        count = 1
+    else:
+        count += 1
+        output = max(output, count)
 
-print(output)
+
+print(max(output, count))
