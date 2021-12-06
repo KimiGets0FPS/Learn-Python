@@ -1,6 +1,6 @@
 class User:
     def __init__(self, users, staff):
-        #* users
+        #* users.txt
         self.users = users
         #* staff
         self.staff = staff
