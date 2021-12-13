@@ -10,7 +10,7 @@ def main():
             for _ in range(100):
                 keyboard.press_and_release('e')
                 time.sleep(0.00000000000000001)
-            if time.time()-started >= 5:
+            if time.time()-started >= 180:
                 break
 
 

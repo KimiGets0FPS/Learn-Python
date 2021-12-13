@@ -5,14 +5,24 @@ from selenium.webdriver.common.by import By
 
 import os
 import sys
-import termcolor
+from termcolor import cprint
 import time
+import pyautogui
+
+
+print("-----------------------------\nInstalling some necessary packages...\n-----------------------------")
+time.sleep(2)
 
 os.system("py -m pip install --upgrade pip")
 os.system("py -m pip install selenium")
 os.system("py -m pip install selenium-wire")
 
 os.system("py -m pip install termcolor")
+
+
+time.sleep(1)
+cprint("\nDone!", color="blue")
+time.sleep(2)
 
 sys.stdout.flush()
 
