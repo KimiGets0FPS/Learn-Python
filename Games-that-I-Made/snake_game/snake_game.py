@@ -2,8 +2,6 @@ import os
 import time
 import sys
 import random
-import curses
-from curses import KEY_RIGHT, KEY_LEFT, KEY_UP, KEY_DOWN
 
 # IMPORTANT: MUST RUN ON CMD/TERMINAL
 
