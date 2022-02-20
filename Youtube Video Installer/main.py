@@ -4,7 +4,7 @@ import pytube
 # PATH TO VIDEO
 SAVE_PATH = input("Path you want to save on: ")
 if not SAVE_PATH:
-    SAVE_PATH = "E:/Videos And YT/Download Youtube Videos/Memes"
+    SAVE_PATH = "D:/VIDEOS/memes"
 
 # OPTIONAL NAME
 NAME = input("Name for saving: ")
