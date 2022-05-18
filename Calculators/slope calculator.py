@@ -1,4 +1,5 @@
 import os
+import time
 
 
 def clear():
@@ -14,33 +15,36 @@ def find_common_factor(num1: int, num2: int) -> int:
     return output if output != 0 or output != 1 else None
 
 
-def two_points(point_1: list[int], point_2: list[int]) -> str:
+def two_points(point_1: list[int], point_2: list[int]) -> float:
     # Special case if y1 - y2 == 0
     if point_1[1] - point_2[1] == 0 or point_2[1] - point_1[1] == 0:
-        return "Slope: 0 (Zero Division Error)"
-    return f"Slope: {(point_1[1] - point_2[1]) / (point_1[0] - point_2[0])}"
+        return 0
+    return (point_1[1] - point_2[1]) / (point_1[0] - point_2[0])
 
 
 def main():
     while True:
-        print("\n----Press Enter to exit anytime----\n")
-        choice = input(f"Choices (select number):\n1.) 2 points\n2.) \nChoice: ")
-        if not choice:
+        set_1 = list(map(int, input("First set (separated with space): ").split(" ")))
+        if not set_1:
+            print("Must give input!")
             break
-        if int(choice) == 1:
-            while True:
-                set_1 = list(map(int, input("First set (separated with space): ").split(" ")))
-                if not set_1:
-                    print("Must give input!")
-                    break
-                set_2 = list(map(int, input("Second set (separated with space): ").split(" ")))
-                if not set_2:
-                    print("Must give input!")
-                    break
-                else:
-                    print(two_points(set_1, set_2))
+        set_2 = list(map(int, input("Second set (separated with space): ").split(" ")))
+        if not set_2:
+            print("Must give input!")
+            break
+        else:
+            slope = two_points(set_1, set_2)
+            if slope == 0:
+                print("Zero division Error")
+            else:
+                print(f"Slope: {slope}")
+            y_intercept = (slope*set_1[0])/set_1[1]
+            equation = f"y = {slope}x + {y_intercept}"
+            print(f"y-intercept: {y_intercept}")
+            print(f"Equation: {equation}")
+            input("Press enter to continue...")
         clear()
-
+    time.sleep(2)
     return "Thanks you for using this calculator!"
 
 
