@@ -1,4 +1,3 @@
-# TODO: COMMIT AND PUSH
 import math
 fin = open("cbarn.in", 'r')
 n = int(fin.readline())

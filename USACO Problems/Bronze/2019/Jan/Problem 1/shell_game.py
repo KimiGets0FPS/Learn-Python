@@ -1,10 +1,13 @@
-fin = open("shell.in", "r")
-fout = open("shell.out", "w")
+import sys
 
-times = int(fin.readline())
+
+sys.stdin = open("shell.in", "r")
+sys.stdout = open("shell.out", "w")
+
+times = int(input())
 nums = []
 for i in range(times):
-    num = fin.readline().split()
+    num = input().split()
     nums.append(num)
 
 output = 0
@@ -23,5 +26,4 @@ for i in range(times):
         output = count
     possibility += 1
 
-with open('shell.out', 'w') as out:
-    print(output, file=out)
+print(output)

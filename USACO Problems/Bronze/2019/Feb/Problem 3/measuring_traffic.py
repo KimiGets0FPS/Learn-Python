@@ -1,13 +1,14 @@
 import math
+import sys
 
 
-fin = open('traffic.in', 'r')
-miles = int(fin.readline())
+sys.stdin = open('traffic.in', 'r')
+sys.stdout = open('traffic.out', 'w')
+
+miles = int(input())
 road_seg = []
 for i in range(miles):
-    road_seg.append(fin.readline().split())
-    
-print(road_seg)
+    road_seg.append(input().split())
 
 # Solution
 
@@ -54,7 +55,6 @@ output[3] = second
 for i in range(len(output)):
     if output[i] < 0:
         output[i] = 0
-print(output)
 
 
-print(f"{output[0]} {output[1]}\n{output[2]} {output[3]}", file=open("traffic.out", 'w'))
+print(f"{output[0]} {output[1]}\n{output[2]} {output[3]}")
