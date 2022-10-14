@@ -3,6 +3,7 @@ import sys
 
 sys.stdin = open('speeding.in', 'r')
 sys.stdout = open('speeding.out', 'w')
+
 n, m = list(map(int, input().split()))
 lv = []
 for i in range(n):

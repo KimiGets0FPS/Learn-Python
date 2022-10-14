@@ -1,4 +1,8 @@
+import sys
+
+
 fin = open('cownomics.in', 'r')
+sys.stdout = open('cownomics.out', 'w')
 n, m = list(map(int, fin.readline().split()))
 spotty = []
 for i in range(n):
@@ -6,7 +10,6 @@ for i in range(n):
 plain = []
 for i in range(n):
     plain.append(fin.readline()[0:-1])
-print(spotty, plain)
 # print(n, m)
 
 
@@ -23,6 +26,3 @@ for i in range(m):  # looping spotty cow genes
         output += 1
 
 print(output)
-
-with open('cownomics.out', 'w') as out:
-    print(output, file=out)

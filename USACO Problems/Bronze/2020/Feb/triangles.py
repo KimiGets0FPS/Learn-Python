@@ -1,10 +1,12 @@
 from itertools import permutations
+import sys
 
 
-fin = open('triangles.in', 'r')
+sys.stdin = open('triangles.in', 'r')
+sys.stdout = open('triangles.out', 'w')
 nums = []
-for i in range(int(fin.readline())):
-    nums.append(list(map(int, fin.readline().split())))
+for i in range(int(input())):
+    nums.append(list(map(int, input().split())))
 
 # Solution
 
@@ -20,6 +22,3 @@ for i in points:
         ))  # Ax(By − Cy) + Bx(Cy − Ay) + Cx(Ay − By) -> area of triangle from a graph (searched online)
 
 print(output)
-
-with open('triangles.out', 'w') as out:
-    print(output, file=out)

@@ -1,5 +1,10 @@
-fin = open('lostcow.in', 'r')
-x, y = list(map(int, fin.readline().split()))
+import sys
+
+
+sys.stdin = open('lostcow.in', 'r')
+sys.stdout = open('lostcow.out', 'w')
+
+x, y = list(map(int, input().split()))
 
 # Solution
 
@@ -21,6 +26,3 @@ while True:
 
 
 print(output)
-
-with open('lostcow.out', 'w') as out:
-    print(output, file=out)

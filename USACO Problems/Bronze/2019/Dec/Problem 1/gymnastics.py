@@ -1,9 +1,13 @@
-fin = open("gymnastics.in", "r")
-k, n = map(int, fin.readline().split())
+import sys
+
+
+sys.stdin = open("gymnastics.in", "r")
+sys.stdout = open("gymnastics.out", "w")
+
+k, n = map(int, input().split())
 nums = []
 for i in range(k):
-    nums.append(list(map(int, fin.readline().split())))
-print(nums)
+    nums.append(list(map(int, input().split())))
 
 # solution
 
@@ -15,7 +19,6 @@ for i in range(len(nums)):
     for j in range(len(nums[i])):
         temp[nums[i][j]-1] = j
     indexes.append(temp)
-print(indexes)
 
 output = 0
 for i in range(len(nums[0])-1):
@@ -29,6 +32,3 @@ for i in range(len(nums[0])-1):
             output += 1
 
 print(output)
-
-with open('gymnastics.out', 'w') as out:
-    print(output, file=out)

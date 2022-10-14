@@ -1,8 +1,13 @@
-fin = open('cowsignal.in', 'r')
-m, n, k = list(map(int, fin.readline().split()))
+import sys
+
+
+sys.stdin = open('cowsignal.in', 'r')
+sys.stdout = open('cowsignal.out', 'w')
+
+m, n, k = list(map(int, input().split()))
 signal = []
 for i in range(m):
-    signal.append(fin.readline().split())
+    signal.append(input().split())
 
 print(signal)
 
@@ -15,11 +20,6 @@ for i in range(len(signal)):
     output.append([temp]*k)
 
 
-with open('cowsignal.out', 'w') as out:
-    for i in output:
-        for j in i:
-            out.write(j + '\n')
-            print(j)
-
-# O(n^2) Time complexity
-# O(n) Space complexity
+for i in output:
+    for j in i:
+        print(j)

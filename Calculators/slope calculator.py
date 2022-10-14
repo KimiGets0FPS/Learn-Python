@@ -37,12 +37,16 @@ def main():
         else:
             slope = two_points(set_1, set_2)
             if slope == "Answer Undefined/Infinity":
-                print("Zero division Error")
+                print("Answer Undefined/Infinity")
             else:
                 print(f"Slope: {slope}")
                 y_intercept = (slope*set_1[0])/set_1[1]
+                if slope == 0:
+                    print(f"y-intercept: {set_1[1]}")
+                else:
+                    print(f"y-intercept: {y_intercept}")
+
                 equation = f"y = {slope}x + {y_intercept}"
-                print(f"y-intercept: {y_intercept}")
                 print(f"Equation: {equation}")
                 input("Press enter to continue...")
         clear()

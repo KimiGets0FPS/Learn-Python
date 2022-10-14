@@ -1,8 +1,13 @@
-fin = open("cowqueue.in", 'r')
-num = int(fin.readline())
+import sys
+
+
+sys.stdin = open("cowqueue.in", 'r')
+sys.stdout = open('cowqeue.out', 'w')
+
+num = int(input())
 cows = []
 for i in range(num):
-    cows.append(list(map(int, fin.readline().split())))
+    cows.append(list(map(int, input().split())))
 
 # Solution
 
@@ -18,4 +23,3 @@ for i in range(len(cows)):
 
 print(output)
 
-print(output, file=open("cowqueue.out", 'w'))

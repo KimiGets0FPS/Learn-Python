@@ -1,8 +1,12 @@
-fin = open("diamond.in", "r")
-n, k = map(int, fin.readline().split())
+import sys
+
+
+sys.stdin = open("diamond.in", "r")
+sys.stdout = open("diamond.out", "w")
+n, k = map(int, input().split())
 nums = []
 for i in range(n):
-    nums.append(int(fin.readline()))
+    nums.append(int(input()))
 
 # Two Pointers Technique
 
@@ -16,5 +20,4 @@ while high != len(nums):
     else:
         low += 1
 
-with open("diamond.out", "w") as out:
-    print(output, file=out)
+print(output)

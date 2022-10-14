@@ -1,7 +1,11 @@
-fin = open('shuffle.in', 'r')
-n = int(fin.readline())
-swap = list(map(int, fin.readline().split()))
-cow_id = list(map(int, fin.readline().split()))
+import sys
+
+
+sys.stdin = open('shuffle.in', 'r')
+sys.stdout = open('shuffle.out', 'w')
+n = int(input())
+swap = list(map(int, input().split()))
+cow_id = list(map(int, input().split()))
 # Solution
 
 output = []
@@ -13,8 +17,4 @@ for i in range(3):
     cow_id = temp
     output = temp
 
-print(output)
-
-with open('shuffle.out', 'w') as out:
-    for i in range(len(output)):
-        print(output[i], file=out)
+print(i for i in output)

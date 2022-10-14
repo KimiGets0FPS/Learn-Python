@@ -1,8 +1,13 @@
-fin = open('blist.in', 'r')
-n = int(''.join(fin.readline().split()))
+import sys
+
+
+sys.stdin = open('blist.in', 'r')
+sys.stdout = open('blist.in', 'w')
+
+n = int(''.join(input().split()))
 cows = []
 for i in range(n):
-    cows.append(list(map(int, fin.readline().split())))
+    cows.append(list(map(int, input().split())))
 
 # Cows[i] = starting time, ending time, buckets
 
@@ -23,5 +28,3 @@ for i in range(max_time):
     output = max(output, current)
 
 print(output)
-
-print(output, file=open('blist.out', 'w'))

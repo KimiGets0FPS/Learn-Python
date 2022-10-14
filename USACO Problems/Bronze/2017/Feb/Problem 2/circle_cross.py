@@ -1,5 +1,10 @@
-fin = open('circlecross.in', 'r')
-fences = ''.join(fin.readline().split())
+import sys
+
+
+sys.stdin = open('circlecross.in', 'r')
+sys.stdout = open('circlecross.out', 'w')
+
+fences = ''.join(input().split())
 print(fences)
 
 # Solution
@@ -25,6 +30,3 @@ for i in range(len(letters) - 1):
             output += 1
 
 print(output)
-
-with open('circlecross.out', 'w') as out:
-    print(output, file=out)

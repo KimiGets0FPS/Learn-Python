@@ -1,32 +1,17 @@
-# TODO: Unfinished
+import sys
 
 
-fin = open("guess.in", 'r')
-num_an = int(fin.readline())
+sys.stdin = open("guess.in", 'r')
+sys.stdout = open("guess.out", 'w')
+nums = int(input())
 
-animals = {}  # name: [{characteristics}]
-for i in range(num_an):
-    s = fin.readline().split()
-    animals[s[0]] = s[2:]
+animals = []
+for i in range(nums):
+    animals.append(set(input().split()[2:]))
 
 output = 0
-for i in animals:
-    # loop the animals
-    count = 1  # The unique guess that Bessie uses to get right
-    for j in animals[i]:
-        for x in animals:
-            if_common = False
-            if i != x:
-                # Find common characteristics
-                for y in animals[x]:
-                    # Looping through characteristics
-                    if j == y:
-                        if_common = True
-                        break
-        if if_common:
-            count += 1
-    output = max(output, count)
+for i in range(nums):
+    for j in range(i+1, nums):
+        output = max(output, len(animals[i].intersection(animals[j]))+1)
 
 print(output)
-
-print(output, file=open("guess.out", 'w'))

@@ -1,12 +1,14 @@
 import string
+import sys
 
 
-fin = open('blocks.in', 'r')
-n = int(fin.readline())
+sys.stdin = open('blocks.in', 'r')
+sys.stdout = open('blocks.out', 'w')
+n = int(input())
 
 words = []
 for i in range(n):
-    words.append(fin.readline().split())
+    words.append(input().split())
 
 print(words)
 
@@ -21,7 +23,4 @@ for i in range(len(words)):
         for x in range(len(words[i][j])):
             letters[words[i][j][x]] += 1
 
-print(letters)
-
-for i in letters:
-    print(f"{letters[i]}", file=open('blocks.out', 'a'))
+print(i for i in letters)

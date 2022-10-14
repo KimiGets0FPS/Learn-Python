@@ -1,6 +1,10 @@
-fin = open("pails.in", "r")
+import sys
 
-x, y, m = list(map(int, open('pails.in', 'r').readline().split()))
+
+sys.stdin = open("pails.in", "r")
+sys.stdout = open("pails.out", "r")
+
+x, y, m = list(map(int, input().split()))
 
 # Compete Search Method
 # Brute Force
@@ -24,5 +28,4 @@ for i in c1:
             output = i + j
 
 
-with open("pails.out", "w") as out:
-    print(output, file=out)
+print(output)

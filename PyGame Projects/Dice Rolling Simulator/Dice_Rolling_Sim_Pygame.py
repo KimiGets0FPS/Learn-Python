@@ -4,6 +4,7 @@ import pygame
 import sys
 from pygame.locals import *
 
+
 pygame.init()
 
 DISPLAY_SURF = pygame.display.set_mode((500, 500), 0, 32)

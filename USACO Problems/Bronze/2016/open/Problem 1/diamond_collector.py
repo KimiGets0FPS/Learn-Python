@@ -1,9 +1,13 @@
-fin = open("diamond.in", "r")
+import sys
 
-n, k = map(int, fin.readline().split())
+
+sys.stdin = open("diamond.in", "r")
+sys.stdout = open('diamond.out', 'w')
+
+n, k = map(int, input().split())
 nums = []
 for i in range(n):
-    nums.append(int(fin.readline()))
+    nums.append(int(input()))
 
 # Brute force method
 output = 0
@@ -15,5 +19,4 @@ for i in range(len(nums)):
     if count > output:
         output = count
 
-with open("diamond.out", "w") as out:
-    print(output, file=out)
+print(output)

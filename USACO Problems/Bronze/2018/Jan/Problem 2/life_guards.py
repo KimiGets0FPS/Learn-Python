@@ -1,7 +1,11 @@
-fin = open('lifeguards.in', 'r')
+import sys
+
+
+sys.stdin = open('lifeguards.in', 'r')
+sys.stdout = open('lifeguards.out', 'w')
 nums = []
-for i in range(int(fin.readline())):
-    nums.append(list(map(int, fin.readline().split())))
+for i in range(int(input())):
+    nums.append(list(map(int, input().split())))
 
 # Solution
 
@@ -18,6 +22,3 @@ for i in range(len(nums)-1):
 
 
 print(output)
-
-with open('lifeguards.out', 'w') as out:
-    print(output, file=out)

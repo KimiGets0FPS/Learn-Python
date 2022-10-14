@@ -1,6 +1,8 @@
 import sys
 
 sys.stdin = open("billboard.in", 'r')
+sys.stdout = open('billbiard.out', 'w')
+
 dimensions = []
 for i in range(3):
     nums = list(map(int, input().split()))
@@ -28,5 +30,4 @@ def inter_area(sq, tr):
 print((((r1[1][0] - r1[0][0]) * (r1[1][1] - r1[0][1])) +
        ((r2[1][0] - r2[0][0]) * (r2[1][1] - r2[0][1])) -
        (inter_area([r1[0][0], r1[0][1], r1[1][0], r1[1][1]], [truck[0][0], truck[0][1], truck[1][0], truck[1][1]]) +
-        inter_area([r2[0][0], r2[0][1], r2[1][0], r2[1][1]], [truck[0][0], truck[0][1], truck[1][0], truck[1][1]]))),
-      file=open("billboard.out", 'w'))
+        inter_area([r2[0][0], r2[0][1], r2[1][0], r2[1][1]], [truck[0][0], truck[0][1], truck[1][0], truck[1][1]]))))

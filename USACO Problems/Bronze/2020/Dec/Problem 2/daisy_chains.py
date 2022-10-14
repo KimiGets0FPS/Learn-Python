@@ -1,3 +1,10 @@
+import sys
+
+
+input = sys.stdin.readline
+print = sys.stdout.write
+
+
 amount = int(input())
 nums = []
 for i in input().split(" "):
@@ -19,4 +26,4 @@ for i in range(len(nums)):
     count += 1
     current = []
 
-print(summed)
+print(f"{summed}")

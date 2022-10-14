@@ -1,10 +1,8 @@
-count = input()
-nums = input().split()
+import sys
 
-# Solution
 
-output = {}
-for i in range(len(nums)):
-    output[nums[i]] = output.get(nums[i], 0) + 1
+input = sys.stdin.readline
+print = sys.stdout.write
 
-print(len(output))
+n = int(input())
+print(f"{len(set(list(map(int, input().split()))))}")
