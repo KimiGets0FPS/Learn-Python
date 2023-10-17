@@ -1,10 +1,7 @@
 class Book:
     def __init__(self):
-        self.borrowed_books = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 "
-                                   "HW/txt_Version/borrowed.txt", "r")
-        self.books = open(
-            "C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 HW/txt_Version/books.txt",
-            "r")
+        self.borrowed_books = open("borrowed.txt", "r")
+        self.books = open("books.txt", "r")
 
     def specific_book_available(self, book):
         if book in self.books:

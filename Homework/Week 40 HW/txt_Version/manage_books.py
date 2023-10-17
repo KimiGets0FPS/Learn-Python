@@ -1,14 +1,9 @@
 class Manage:
     def __init__(self):
-        self.read_borrowed = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 "
-                                  "HW/txt_Version/borrowed.txt", "r")
-        self.read_books = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 "
-                               "HW/txt_Version/books.txt",
-                               "r")
-        self.edit_ = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 "
-                          "HW/txt_Version/borrowed.txt", "w")
-        self.edit_books = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 "
-                               "HW/txt_Version/books.txt", "w")
+        self.read_borrowed = open("borrowed.txt", "r")
+        self.read_books = open("books.txt", "r")
+        self.edit_ = open("borrowed.txt", "w")
+        self.edit_books = open("books.txt", "w")
 
     def borrow_book(self, book):
         for line in self.read_borrowed.readlines():

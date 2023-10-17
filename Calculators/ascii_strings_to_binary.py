@@ -7,6 +7,7 @@ def clear():
 
 def ascii_to_binary():
     while True:
+        print("Ascii to Binary Conversion")
         binary = []
         value = input()
         if not value:
@@ -31,6 +32,24 @@ def ascii_to_binary():
 
 def binary_to_ascii():
     while True:
+        print("Binary to Ascii Conversion")
+        binary = input().split()
+        if not binary:
+            return
+        value = []
+        ascii_code = []
+        for i in range(len(binary)):
+            ascii_code.append(int(binary[i], 2))
+            value.append(chr(int(binary[i], 2)))
+        print(f"Ascii: {ascii_code}")
+        print(f"Character: {''.join(str(value))}")
+        input("Enter to Continue...")
+        clear()
+
+
+def binary_to_unicode():
+    while True:
+        print("Binary to Unicode Conversion")
         binary = input().split()
         if not binary:
             return
@@ -49,3 +68,4 @@ def binary_to_ascii():
 if __name__ == "__main__":
     ascii_to_binary()
     binary_to_ascii()
+    binary_to_unicode()

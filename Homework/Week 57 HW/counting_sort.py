@@ -8,12 +8,9 @@ def counting_sort(nums: list[int]) -> list[int]:
     [2, 23, 34, 58, 123, 245, 456, 456, 568, 1234, 4756]
     """
     # Getting maximum number
-    max_num = 0
-    for i in range(len(nums)):
-        if max_num < nums[i]:
-            max_num = nums[i]
+    largest = max(nums)
     # Counting the numbers
-    count = [0] * (max_num + 1)
+    count = [0] * (largest + 1)
     for i in range(len(nums)):
         count[nums[i]] += 1
     # Getting the output

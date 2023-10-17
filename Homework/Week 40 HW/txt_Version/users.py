@@ -1,5 +1,4 @@
-file = open("C:/Users/zhewe/OneDrive/Documents/Coding Projects/Learn-Python/Homework/Week 40 HW/txt_Version/users.txt",
-            "r")
+file = open("users.txt", "r")
 
 
 class Users:

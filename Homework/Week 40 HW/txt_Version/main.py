@@ -59,9 +59,9 @@ def menu():
             # Option 8 Modify Book
             elif user_input == '8':
                 print(manage.modify_book(input("Enter the book name (required):"),
-                                         input("Enter new name (): "),
-                                         int(input("Enter new price (): ")),
-                                         input("Enter new author (): ")))
+                                         input("Enter new name: "),
+                                         int(input("Enter new price: ")),
+                                         input("Enter new author: ")))
 
             # Option 9, Quit
             elif user_input == '9':
