@@ -60,9 +60,6 @@ def macro1(times): # Farming wheat, carrots, and potatoes
 
 
 def macro2(times):  # Farming netherwart
-    if times == 15:
-        pg.hotkey('alt', 'f4')
-        os.system('shutdown /s /t 0')
     print(f"{times} times farmed 5 layers")
 
     pg.mouseDown(button='left')
