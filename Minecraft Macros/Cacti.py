@@ -1,39 +1,50 @@
 """
 Macro made by KimiGets0FPS_YT
 
-This macro will farm superfarm for Cactus ONLY
+This macro will farm superfarm for cactus ONLY
 
-Speed: 400%
+Speed: 470%
+Yaw: 90.0/0.0
+
+Make sure that you're not moving left or right when moving foward/backward
 
 REMEMBER TO DO /setspawn to set your spawnpoint on the garden!
 """
 
-import time
+import win_precise_time as wpt
 import pyautogui as pg
 
 def macro(times):
     pg.mouseDown(button='left')
 
-    # 28 seconds
-    pg.keyDown('a')
-    time.sleep(28)
-    pg.keyUp('a')
+    for _ in range(10):
 
-    for _ in range(11):
+        pg.keyDown('a')
+        wpt.sleep(23.9)
+        pg.keyUp('a')
+
         pg.keyDown('w')
-        time.sleep(0.3)
+        wpt.sleep(0.1)
         pg.keyUp('w')
 
         pg.keyDown('d')
-        time.sleep(28)
+        wpt.sleep(23.9)
         pg.keyUp('d')
 
         pg.keyDown('w')
-        time.sleep(0.3)
+        wpt.sleep(0.1)
         pg.keyUp('w')
-    
+
+    pg.keyDown('a')
+    wpt.sleep(23.9)
+    pg.keyUp('a')
+
+    pg.keyDown('w')
+    wpt.sleep(0.1)
+    pg.keyUp('w')
+
     pg.keyDown('d')
-    time.sleep(28)
+    wpt.sleep(23.9)
     pg.keyUp('d')
 
     warp_garden()
@@ -50,12 +61,12 @@ def start():
     pg.write('/warp garden')
     pg.press('enter')
     
-    time.sleep(0.001)
+    wpt.sleep(0.001)
 
 def countdown(seconds):
     for i in range(seconds):
         print(f"{seconds - i} seconds left")
-        time.sleep(1)
+        wpt.sleep(1)
     print("Starting Macro")
 
 def main():

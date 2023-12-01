@@ -8,11 +8,10 @@ Speed: 93%
 REMEMBER TO DO /setspawn to set your spawnpoint on the garden!
 """
 
+import os
 import win_precise_time as wpt
 
 import pyautogui as pg
-# import pygetwindow as gw
-# from pywinauto import Application
 
 
 def warp_garden():
@@ -38,39 +37,7 @@ def start():
 
     wpt.sleep(0.001)
 
-def macro1(times): # Farming wheat, carrots, and potatoes
-    # if times-1 > 30:
-    #     os.system("shutdown /s /t 1")
-    print(f"{times} times farmed 5 layers")
-
-    pg.mouseDown(button='left')
-    layer = 1
-    print(f"Layer {layer}")
-    for _ in range(2):
-        pg.keyDown('d')
-        wpt.sleep(119.3)
-        pg.keyUp('d')
-
-        layer += 1
-        print(f"Layer {layer}")
-        
-        pg.keyDown('a')
-        wpt.sleep(119.3)
-        pg.keyUp('a')
-
-        layer += 1
-        print(f"Layer {layer}")
-
-    # Last Layer
-    pg.keyDown('d')
-    wpt.sleep(119.3)
-    pg.keyUp('d')
-
-    # Start the process again
-    warp_garden()
-    macro1(times+1)
-
-def macro2(times):  # Farming netherwart
+def macro(times):
     # if times-1 > 25:  # Computer automatically shuts down after farming 35 times
     #     os.system("shutdown /s /t 1")
     print(f"{times} times farmed 5 layers")
@@ -80,13 +47,13 @@ def macro2(times):  # Farming netherwart
     print(f"Layer {layer}")
     for _ in range(2):
         pg.keyDown('a')
-        wpt.sleep(119.3)
+        wpt.sleep(119.5)
         pg.keyUp('a')
 
         layer += 1
         print(f"Layer {layer}")
         pg.keyDown('d')
-        wpt.sleep(119.3)
+        wpt.sleep(119.5)
         pg.keyUp('d')
         
         layer += 1
@@ -94,12 +61,13 @@ def macro2(times):  # Farming netherwart
 
     # Last Layer
     pg.keyDown('a')
-    wpt.sleep(119.3)
+    wpt.sleep(119.4)
     pg.keyUp('a')
 
     # Start the process again
     warp_garden()
-    macro2(times+1)
+    macro(times+1)
+
 
 def countdown(seconds):
     for i in range(seconds):
@@ -108,14 +76,10 @@ def countdown(seconds):
     print("Starting Macro")
 
 def main():
-    netherwart = input("Is 'A' supposed to be pressed? (y/n): ").lower() == "y"
     countdown(int(input("Seconds to countdown: ")))
 
     start()
-    if netherwart:
-        macro2(times = 1)
-    else:
-        macro1(times = 1)
+    macro(times = 1)
 
 if __name__ == "__main__":
     main()

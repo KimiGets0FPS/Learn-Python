@@ -5,12 +5,13 @@ This macro will farm superfarm for cocoabeans ONLY
 
 Speed: 155%
 Pitch: 45
+TOGGLESPRINT: OFF
 
 REMEMBER TO DO /setspawn to set your spawnpoint on the garden!
 """
 
 
-import time
+import win_precise_time as wpt
 import pyautogui as pg
 
 
@@ -22,22 +23,22 @@ def macro(times):
 
         # Walk straight
         pg.keyDown('w')
-        time.sleep(55.2)
+        wpt.sleep(72)
         pg.keyUp('w')
 
         # Move to the right
         pg.keyDown('d')
-        time.sleep(0.3)
+        wpt.sleep(0.3)
         pg.keyUp('d')
 
         # Walk back
         pg.keyDown('s')
-        time.sleep(72)
+        wpt.sleep(72)
         pg.keyUp('s')
 
         # Move to the right
         pg.keyDown('d')
-        time.sleep(0.45)
+        wpt.sleep(0.45)
         pg.keyUp('d')
 
     warp_garden()
@@ -54,12 +55,12 @@ def start():
     pg.write('/warp garden')
     pg.press('enter')
     
-    time.sleep(0.001)
+    wpt.sleep(0.001)
 
 def countdown(seconds):
     for i in range(seconds):
         print(f"{seconds - i} seconds left")
-        time.sleep(1)
+        wpt.sleep(1)
     print("Starting Macro")
 
 def main():
