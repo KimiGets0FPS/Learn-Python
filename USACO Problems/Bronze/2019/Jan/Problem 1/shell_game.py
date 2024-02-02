@@ -1,6 +1,5 @@
 import sys
 
-
 sys.stdin = open("shell.in", "r")
 sys.stdout = open("shell.out", "w")
 

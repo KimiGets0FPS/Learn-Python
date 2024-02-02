@@ -1,16 +1,4 @@
-"""
-Script made by KimiGets0FPS_YT
-
-This macro will work for MELONS AND PUMPKINS
-
-Pitch must be 58.5-59
-Speed: 280% (with depth strider 3)
-"""
-
-
-import os
 import win_precise_time as wpt
-
 import pyautogui as pg
 
 
@@ -19,7 +7,6 @@ def warp_garden():
     pg.press('t')
     pg.write('/warp garden')
     pg.press('enter')
-    wpt.sleep(0.025)
 
 def start():
     # pg.press('t')
@@ -27,7 +14,7 @@ def start():
     pg.press('enter')
 
     # pg.keyDown('space')
-    # time.sleep(0.05)a
+    # time.sleep(0.05)
     # pg.keyUp('space')
 
     # time.sleep(0.01)
@@ -41,49 +28,53 @@ def start():
 def macro(times):
     # if times-1 > 25:  # Computer automatically shuts down after farming 35 times
     #     os.system("shutdown /s /t 1")
-    print(f"{times} times farmed 10 sections")
+    print(f"{times} times farmed 5 layers")
 
     pg.mouseDown(button='left')
     layer = 1
-    print(f"Section {layer}")
-    for _ in range(4):
-        pg.keyDown('a')
-        wpt.sleep(74)
-        pg.keyUp('a')
+    print(f"Layer {layer}")
 
-        pg.keyDown('w')
-        wpt.sleep(0.45)
-        pg.keyUp('w')
+    pg.keyDown('d')
+    wpt.sleep(227)
+    pg.keyUp('d')
 
-        layer += 1
-        print(f"Section {layer}")
+    pg.keyDown('w')
+    wpt.sleep(1.25)
+    pg.keyUp('w')
 
-        pg.keyDown('d')
-        wpt.sleep(74)
-        pg.keyUp('d')
-
-        pg.keyDown('w')
-        wpt.sleep(0.4)
-        pg.keyUp('w')
-        
-        layer += 1
-        print(f"Section {layer}")
-
-    # Last Section
     pg.keyDown('a')
-    wpt.sleep(74)
+    wpt.sleep(227)
+    pg.keyUp('a')
+    
+    layer += 1
+    print(f"Layer {layer}")
+
+    pg.keyDown('d')
+    wpt.sleep(227)
+    pg.keyUp('d')
+
+    pg.keyDown('s')
+    wpt.sleep(1.9)
+    pg.keyUp('s')
+
+    pg.keyDown('a')
+    wpt.sleep(227)
     pg.keyUp('a')
 
     layer += 1
-    print(f"Section {layer}")
-
-    pg.keyDown('w')
-    wpt.sleep(0.4)
-    pg.keyUp('w')
+    print(f"Layer {layer}")
 
     pg.keyDown('d')
-    wpt.sleep(74)
+    wpt.sleep(227)
     pg.keyUp('d')
+
+    pg.keyDown('w')
+    wpt.sleep(1.25)
+    pg.keyUp('w')
+
+    pg.keyDown('a')
+    wpt.sleep(227)
+    pg.keyUp('a')
 
     # Start the process again
     warp_garden()
