@@ -21,7 +21,7 @@ def warp_garden():
     pg.press('enter')
 
 def start():
-    # pg.press('t')
+    pg.press('t')
     pg.write('/warp garden')
     pg.press('enter')
 
@@ -47,24 +47,24 @@ def macro(times):
     section = 1
     print(f"Section {section}")
     for _ in range(4):
-        pg.keyDown('d')
+        pg.keyDown('a')
         wpt.sleep(48)
-        pg.keyUp('d')
+        pg.keyUp('a')
 
-        section += 1
-        print(f"Section {section}")
+        pg.keyDown('w')
+        wpt.sleep(0.2)
+        pg.keyUp('w')
 
         pg.keyDown('s')
         wpt.sleep(48)
         pg.keyUp('s')
 
+        pg.keyDown('d')
+        wpt.sleep(0.2)
+        pg.keyUp('d')
+
         section += 1
         print(f"Section {section}")
-
-    # Last Section
-    pg.keyDown('d')
-    wpt.sleep(48.1)
-    pg.keyUp('d')
 
     # Start the process again
     warp_garden()

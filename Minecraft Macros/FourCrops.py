@@ -5,14 +5,12 @@ This macro will farm superfarm for WHEAT, CARROTS, POTATOES, AND NETHER WARTS
 
 Speed: 93%
 
-REMEMBER TO DO /setspawn to set your spawnpoint on the garden!
+REMEMBER TO DO /setspawn to set your spawn point on the garden!
 """
 
 import win_precise_time as wpt
 
 import pyautogui as pg
-# import pygetwindow as gw
-# from pywinauto import Application
 
 
 def warp_garden():
@@ -22,7 +20,7 @@ def warp_garden():
     pg.press('enter')
 
 def start():
-    # pg.press('t')
+    pg.press('t')
     pg.write('/warp garden')
     pg.press('enter')
 
