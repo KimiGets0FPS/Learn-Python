@@ -19,7 +19,7 @@ def macro(times):
 
     pg.mouseDown(button='left')
     
-    for _ in range(12):
+    for _ in range(5):
 
         # Walk straight
         pg.keyDown('w')
@@ -28,7 +28,7 @@ def macro(times):
 
         # Move to the right
         pg.keyDown('d')
-        wpt.sleep(0.3)
+        wpt.sleep(0.25)
         pg.keyUp('d')
 
         # Walk back
@@ -38,8 +38,22 @@ def macro(times):
 
         # Move to the right
         pg.keyDown('d')
-        wpt.sleep(0.45)
+        wpt.sleep(0.25)
         pg.keyUp('d')
+
+    pg.keyDown('w')
+    wpt.sleep(72)
+    pg.keyUp('w')
+
+    # Move to the right
+    pg.keyDown('d')
+    wpt.sleep(0.25)
+    pg.keyUp('d')
+
+    # Walk back
+    pg.keyDown('s')
+    wpt.sleep(72)
+    pg.keyUp('s')
 
     warp_garden()
     macro(times+1)
@@ -49,12 +63,6 @@ def warp_garden():
     pg.press('t')
     pg.write('/warp garden')
     pg.press('enter')
-
-def start():
-    # pg.press('t')
-    pg.write('/warp garden')
-    pg.press('enter')
-    
     wpt.sleep(0.001)
 
 def countdown(seconds):
@@ -65,7 +73,7 @@ def countdown(seconds):
 
 def main():
     countdown(int(input("Seconds to countdown: ")))
-    start()
+    warp_garden()
     macro(times=1)
 
 if __name__ == "__main__":
