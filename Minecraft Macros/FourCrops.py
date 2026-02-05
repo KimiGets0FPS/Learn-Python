@@ -24,16 +24,6 @@ def start():
     pg.write('/warp garden')
     pg.press('enter')
 
-    # pg.keyDown('space')
-    # time.sleep(0.05)
-    # pg.keyUp('space')
-
-    # time.sleep(0.01)
-
-    # pg.keyDown('space')
-    # time.sleep(0.05)
-    # pg.keyUp('space')
-
     wpt.sleep(0.001)
 
 def macro1(times): # Farming wheat, carrots, and potatoes

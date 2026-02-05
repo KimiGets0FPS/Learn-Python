@@ -19,7 +19,7 @@ def macro(times):
 
     pg.mouseDown(button='left')
     
-    for _ in range(5):
+    for i in range(7):
 
         # Walk straight
         pg.keyDown('w')
@@ -36,24 +36,12 @@ def macro(times):
         wpt.sleep(72)
         pg.keyUp('s')
 
-        # Move to the right
-        pg.keyDown('d')
-        wpt.sleep(0.25)
-        pg.keyUp('d')
-
-    pg.keyDown('w')
-    wpt.sleep(72)
-    pg.keyUp('w')
-
-    # Move to the right
-    pg.keyDown('d')
-    wpt.sleep(0.25)
-    pg.keyUp('d')
-
-    # Walk back
-    pg.keyDown('s')
-    wpt.sleep(72)
-    pg.keyUp('s')
+        if i != 6:
+            # Move to the right
+            pg.keyDown('d')
+            wpt.sleep(0.25)
+            pg.keyUp('d')
+        print(f"Times: {times}; Column: {i+1}")
 
     warp_garden()
     macro(times+1)
