@@ -36,18 +36,21 @@ def macro(times):
     pg.mouseDown(button='left')
     section = 1
     print(f"Section {section}")
-    for _ in range(8):
-        pg.keyDown('a')
-        wpt.sleep(50)
-        pg.keyUp('a')
-
+    for _ in range(14):
         pg.keyDown('s')
-        wpt.sleep(50)
+        wpt.sleep(20)
         pg.keyUp('s')
+
+        pg.keyDown('a')
+        wpt.sleep(20)
+        pg.keyUp('a')
 
         section += 1
         print(f"Section {section}")
 
+    pg.keyDown('s')
+    wpt.sleep(20)
+    pg.keyUp('s')
     # Start the process again
     warp_garden()
     macro(times+1)
