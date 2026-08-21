@@ -3,9 +3,8 @@ Macro made by KimiGets0FPS_YT
 
 This macro will farm superfarm for cocoabeans ONLY
 
-Speed: 155%
+Speed: 155
 Pitch: 45
-TOGGLESPRINT: OFF
 
 REMEMBER TO DO /setspawn to set your spawnpoint on the garden!
 """
